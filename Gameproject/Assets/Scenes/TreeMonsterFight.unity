@@ -1784,7 +1784,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 20
 --- !u!222 &611668957
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2392,7 +2392,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 20
 --- !u!222 &849068452
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2770,7 +2770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Max: 100
-  now: 0
+  now: 138
   load_text: {fileID: 5491184}
   specialButton: {fileID: 730615018}
 --- !u!114 &1042724525
@@ -2823,6 +2823,7 @@ GameObject:
   - component: {fileID: 1105865012}
   - component: {fileID: 1105865011}
   - component: {fileID: 1105865010}
+  - component: {fileID: 1105865014}
   m_Layer: 5
   m_Name: Strat
   m_TagString: Untagged
@@ -2933,6 +2934,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -168}
   m_SizeDelta: {x: 265.36, y: 75.6067}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1105865014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105865009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48fc0fdc657aae42b79580f853c54a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treeMonster1: {fileID: 429395865}
+  treeMonster2: {fileID: 1558685407}
+  treeMonster3: {fileID: 1459879688}
+  player: {fileID: 1505314125}
+  machine: {fileID: 1675238886}
+  main: {fileID: 1255428192}
 --- !u!1 &1205179726
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,7 +3640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1443879629
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4796,6 +4815,7 @@ MonoBehaviour:
   - {fileID: 1955347938}
   - {fileID: 2072652320}
   spinButton: {fileID: 1105865010}
+  mreturn: {fileID: 1105865014}
 --- !u!1 &1675238886
 GameObject:
   m_ObjectHideFlags: 0
@@ -5222,7 +5242,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 20
 --- !u!222 &1836229384
 CanvasRenderer:
   m_ObjectHideFlags: 0

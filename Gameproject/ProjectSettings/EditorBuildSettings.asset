@@ -13,6 +13,9 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/TreeMonsterFight.unity
+    guid: ab055dff9d196644084bc8cbcad2baa9
+  - enabled: 1
+    path: Assets/Scenes/TallMonsterFight.unity
     guid: 5c01c373cc85cfd4a95ed5ccab477e7f
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0702c675bc6274d4faaba084bfcd6271, type: 2}

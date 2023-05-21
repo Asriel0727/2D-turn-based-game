@@ -40,7 +40,7 @@ public class PlayerValue : MonoBehaviour
     {
         if (SkipCheck())
         {
-            debugText.text += "您閃避了攻擊" + "\n";
+            debugText.text += "您閃避了"+ name +"的攻擊" + "\n";
         }
         else
         {
@@ -81,19 +81,25 @@ public class PlayerValue : MonoBehaviour
         if(isBreak)
         {
             attack = 40;
+            debugText.text += "對" + name + "造成了" + attack + "傷害";
             return attack;
         }
         else
         {
             attack = 20;
+            debugText.text += "對" + name + "造成了" + attack + "傷害";
             return attack;
         }
-
     }
 
     public int GroupAttack()
     {
         attack = 10;
         return attack;
+    }
+
+    public void heal(int value)
+    {
+        hart += value;
     }
 }

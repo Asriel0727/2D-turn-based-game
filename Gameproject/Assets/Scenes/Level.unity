@@ -547,18 +547,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 597922187}
     m_Modifications:
-    - target: {fileID: 347164966162263090, guid: 0d84076eadad5ac4f8c4ea86fcaf6c6d, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 347164966162263090, guid: 0d84076eadad5ac4f8c4ea86fcaf6c6d, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 347164966162263090, guid: 0d84076eadad5ac4f8c4ea86fcaf6c6d, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 547106179
-      objectReference: {fileID: 0}
     - target: {fileID: 347164966162263094, guid: 0d84076eadad5ac4f8c4ea86fcaf6c6d, type: 3}
       propertyPath: m_Name
       value: TreeMonster
@@ -764,7 +752,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6729008957739313547, guid: 0d84076eadad5ac4f8c4ea86fcaf6c6d, type: 3}
+    - {fileID: 4429794892490478069, guid: 0d84076eadad5ac4f8c4ea86fcaf6c6d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0d84076eadad5ac4f8c4ea86fcaf6c6d, type: 3}
 --- !u!4 &1525597995 stripped
 Transform:

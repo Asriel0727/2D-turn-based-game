@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading.Tasks;
 
 public class ButtonAttack : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class ButtonAttack : MonoBehaviour
     private string monsterName;
     private int monsterNumber;
     private int playerAttackValue;
+    private bool canskip = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,7 @@ public class ButtonAttack : MonoBehaviour
         
     }
 
-    public void singleAttack()
+    public async void singleAttack()
     {
         if(selectMonster == null)
         {
@@ -49,50 +51,60 @@ public class ButtonAttack : MonoBehaviour
             debugText.text = "";
             runturn += 1;
             turn.text = "第" + runturn + "回合";
-            if(monsterName == "怪物1號")
+            if(monsterName == "樹妖1號")
             {
                 playerAttackValue = player.Attack(monsterName);
-                treeMonster1.BeAttack(playerAttackValue, monsterName);
+                await Delay(1000);
+                treeMonster1.BeAttack(playerAttackValue, monsterName,canskip);
             }
-            else if (monsterName == "怪物2號")
+            else if (monsterName == "樹妖2號")
             {
                 playerAttackValue = player.Attack(monsterName);
-                treeMonster2.BeAttack(playerAttackValue, monsterName);
+                await Delay(1000);
+                treeMonster2.BeAttack(playerAttackValue, monsterName, canskip);
             }
-            else if (monsterName == "怪物3號")
+            else if (monsterName == "樹妖3號")
             {
                 playerAttackValue = player.Attack(monsterName);
-                treeMonster3.BeAttack(playerAttackValue, monsterName);
+                await Delay(1000);
+                treeMonster3.BeAttack(playerAttackValue, monsterName, canskip);
             }
             debugText.text = "";
             StartCoroutine(MonsterAttack());
         }
     }
 
-    public void GroupAttack()
+    public async void GroupAttack()
     {
         attackGroup.SetActive(false);
         playerAttackValue = player.GroupAttack();
         debugText.text = "發動全體攻擊\n" ;
+        await Delay(1000);
         runturn += 1;
         turn.text = "第" + runturn + "回合";
         if (treeMonster1 != null)
         {
-            monsterName = "怪物1號";
-            treeMonster1.BeAttack(playerAttackValue, monsterName);
+            monsterName = "樹妖1號";
+            treeMonster1.BeAttack(playerAttackValue, monsterName, canskip);
+            await Delay(1000);
         }
         if (treeMonster2 != null)
         {
-            monsterName = "怪物2號";
-            treeMonster2.BeAttack(playerAttackValue, monsterName);
+            monsterName = "樹妖2號";
+            treeMonster2.BeAttack(playerAttackValue, monsterName, canskip);
+            await Delay(1000);
         }
         if (treeMonster3 != null)
         {
-            monsterName = "怪物3號";
-            treeMonster3.BeAttack(playerAttackValue, monsterName);
+            monsterName = "樹妖3號";
+            treeMonster3.BeAttack(playerAttackValue, monsterName, canskip);
+            await Delay(1000);
         }
-        debugText.text = "";
-        StartCoroutine(MonsterAttack());
+        if(treeMonster1 != null || treeMonster2 != null || treeMonster3 != null)
+        {
+            debugText.text = "";
+            StartCoroutine(MonsterAttack());
+        }
     }
 
     public void SpecialAttack()
@@ -106,21 +118,21 @@ public class ButtonAttack : MonoBehaviour
         if(name.name == "Monster(1)")
         {
             selectMonster = name.gameObject;
-            monsterName = "怪物1號";
+            monsterName = "樹妖1號";
             monsterNumber = 1;
             debugText.text = "已選擇" + monsterName;
         }
         else if(name.name == "Monster(2)")
         {
             selectMonster = name.gameObject;
-            monsterName = "怪物2號";
+            monsterName = "樹妖2號";
             monsterNumber = 1;
             debugText.text = "已選擇" + monsterName;
         }
         else if (name.name == "Monster(3)")
         {
             selectMonster = name.gameObject;
-            monsterName = "怪物3號";
+            monsterName = "樹妖3號";
             monsterNumber = 1;
             debugText.text = "已選擇" + monsterName;
         }
@@ -128,15 +140,15 @@ public class ButtonAttack : MonoBehaviour
 
     IEnumerator MonsterAttack()
     {
-        monsterName = "怪物1號";
+        monsterName = "樹妖1號";
         treeMonster1.Attack(monsterName);
-        yield return new WaitForSeconds(2);
-        monsterName = "怪物2號";
+        yield return new WaitForSeconds(1);
+        monsterName = "樹妖2號";
         treeMonster2.Attack(monsterName);
-        yield return new WaitForSeconds(2);
-        monsterName = "怪物3號";
+        yield return new WaitForSeconds(1);
+        monsterName = "樹妖3號";
         treeMonster3.Attack(monsterName);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         debugText.text = "";
         attackGroup.SetActive(true);
     }
@@ -145,5 +157,10 @@ public class ButtonAttack : MonoBehaviour
     {
         runturn = 1;
         debugText.text = " ";
+    }
+
+    private async Task Delay(int milliseconds)
+    {
+        await Task.Delay(milliseconds);
     }
 }

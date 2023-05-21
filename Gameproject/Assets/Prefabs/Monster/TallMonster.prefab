@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3515836560714525365}
   - component: {fileID: 7478023854186029747}
   - component: {fileID: 6637796042259109024}
+  - component: {fileID: 8959981362089019168}
   m_Layer: 0
   m_Name: TallMonster
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 547106179
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 210757fbff1007a458c287b06474257f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -111,3 +112,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.1608493, y: 3.5130534}
   m_EdgeRadius: 0
+--- !u!114 &8959981362089019168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430546914727687372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14452b34b02886d4290595b2d2143736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 347164966162263095}
   - component: {fileID: 347164966162263090}
   - component: {fileID: 347164966162263093}
-  - component: {fileID: 6729008957739313547}
-  - component: {fileID: 4429794892490478069}
+  - component: {fileID: 3161173694139998631}
   m_Layer: 0
   m_Name: TreeMonster
   m_TagString: Monster
@@ -113,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.581815, y: 2.928298}
   m_EdgeRadius: 0
---- !u!114 &6729008957739313547
+--- !u!114 &3161173694139998631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,18 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 347164966162263094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919c6e06c203eab418f1b89727e80030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4429794892490478069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347164966162263094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8021f25b978c7e64b83a5054c7202481, type: 3}
+  m_Script: {fileID: 11500000, guid: b9fe4e9158a541249b173e914827641d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

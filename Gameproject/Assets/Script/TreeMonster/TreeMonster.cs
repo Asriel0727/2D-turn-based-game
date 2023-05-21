@@ -48,16 +48,17 @@ public class TreeMonster : MonoBehaviour
 
     private void InitMonsterVelue()
     {
-        hart = 100;
+        hart = 20;
         attack = 5;
         special = 10;
+        debugText.text = hart.ToString();
     }
 
-    public void BeAttack(int value, string name)
+    public void BeAttack(int value, string name,bool canskip)
     {
-        if(SkipCheck())
+        if(SkipCheck(canskip))
         {
-            debugText.text += name +　"閃避了攻擊" + "\n";
+            debugText.text += name +　"閃避了" + "的攻擊" + "\n";
         }
         else
         {
@@ -68,35 +69,47 @@ public class TreeMonster : MonoBehaviour
         }
     }
 
-    private bool SkipCheck()
+    private bool SkipCheck(bool canskip)
     {
-        randomSkip = Random.Range(0, 10);
-        if(randomSkip > 7)
+        if(canskip)
         {
-            isSkip = true;
+            loading.now = 0;
+            isSkip = false;
+            debugText.text += name + "受到了特殊攻擊而無法行動";
             return isSkip;
         }
         else
         {
-            isSkip = false;
-            return isSkip;
+            randomSkip = Random.Range(0, 10);
+            if (randomSkip > 7)
+            {
+                isSkip = true;
+                return isSkip;
+            }
+            else
+            {
+                isSkip = false;
+                return isSkip;
+            }
         }
     }
 
     public void Attack(string name)
     {
         randomBreak = Random.Range(0, 10);
-        
-        if(randomBreak > 8)
+        if(!isdead)
         {
-            isBreak = true;
-            attack = 15;
-        }
-        else
-        {
-            isBreak = false;
-        }
+            if (randomBreak > 8)
+            {
+                isBreak = true;
+                attack = 15;
+            }
+            else
+            {
+                isBreak = false;
+            }
 
-        playerValue.BeAttack(name, attack);
+            playerValue.BeAttack(name, attack);
+        }
     }
 }
