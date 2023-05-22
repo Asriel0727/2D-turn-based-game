@@ -20,6 +20,7 @@ public class TallMonster : MonoBehaviour
     public Text hartText;
     public Text debugText;
     public loading loading;
+    public Button specialButton;
     void Start()
     {
         InitMonsterVelue();
@@ -65,22 +66,26 @@ public class TallMonster : MonoBehaviour
             debugText.text += "對" + name + "造成" + value + "傷害" + "\n";
             hart = hart - value;
             loading.now += 10;
+            if(!isSkip && canskip )
+            {
+                specialButton.gameObject.SetActive(false);
+                loading.now = 0;
+                debugText.text += name + "受到了特殊攻擊而無法行動";
+            }
             hartText.text = hart.ToString();
         }
     }
 
     private bool SkipCheck(bool canskip)
     {
+        randomSkip = Random.Range(0, 10);
         if (canskip)
         {
-            loading.now = 0;
             isSkip = false;
-            debugText.text += name + "受到了特殊攻擊而無法行動";
             return isSkip;
         }
         else
         {
-            randomSkip = Random.Range(0, 10);
             if (randomSkip > 7)
             {
                 isSkip = true;

@@ -9,6 +9,12 @@ public class BattleManager : MonoBehaviour
     public TreeMonster treeMonster1;
     public TreeMonster treeMonster2;
     public TreeMonster treeMonster3;
+    public PlayerValue playerValue;
+
+    public int hart;
+    public int attack;
+    public int special;
+    public int coin;
     public void BackLevel()
     {
         // 保存觸發器的位置到PlayerPrefs
@@ -21,7 +27,7 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
-        enemy.SetActive(true);
+
     }
 
     private void Update()
@@ -39,6 +45,16 @@ public class BattleManager : MonoBehaviour
     {
         if(treeMonster1.isdead == true && treeMonster2.isdead == true && treeMonster3.isdead == true)
         {
+            hart = playerValue.hart;
+            attack = playerValue.attack;
+            special = playerValue.special;
+            coin = playerValue.coin;
+
+            PlayerPrefs.SetInt("InitHart", hart);
+            PlayerPrefs.SetInt("InitAttack", attack);
+            PlayerPrefs.SetInt("InitSpecial", special);
+            PlayerPrefs.SetInt("InitCoin", coin);
+            PlayerPrefs.Save();
             EndBattle();
         }
     }

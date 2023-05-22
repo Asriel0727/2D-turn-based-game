@@ -5,6 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class TreeMonsterTag : MonoBehaviour
 {
+    public GameObject treeEnemy;
+    public void Start()
+    {
+        if(treeEnemy != null && !treeEnemy.activeSelf)
+        {
+            this.gameObject.SetActive(false);
+        }
+        else
+        {
+            this.gameObject.SetActive(true);
+        }
+    }
+
     private bool inBattle = false;
 
     private void OnCollisionEnter2D(Collision2D collision)

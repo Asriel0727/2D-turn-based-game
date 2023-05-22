@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class TallMonsterTag : MonoBehaviour
 {
+    public GameObject tallEnemy;
+    public void Start()
+    {
+        if (tallEnemy != null && !tallEnemy.activeSelf)
+        {
+            this.gameObject.SetActive(false);
+        }
+        else
+        {
+            this.gameObject.SetActive(true);
+        }
+    }
     private bool inBattle = false;
 
     private void OnCollisionEnter2D(Collision2D collision)

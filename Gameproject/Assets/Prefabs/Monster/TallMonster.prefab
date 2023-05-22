@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8959981362089019168}
   m_Layer: 0
   m_Name: TallMonster
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14452b34b02886d4290595b2d2143736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tallEnemy: {fileID: 8430546914727687372}

@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
             float y = PlayerPrefs.GetFloat("PlayerY");
             float z = PlayerPrefs.GetFloat("PlayerZ");
             GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(x, y, z);
+
         }
     }
 

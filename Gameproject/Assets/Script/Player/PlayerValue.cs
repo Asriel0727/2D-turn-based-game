@@ -5,9 +5,15 @@ using UnityEngine.UI;
 
 public class PlayerValue : MonoBehaviour
 {
-    private int hart;
-    private int attack;
-    private int special;
+    public int inithart;
+    public int initattack;
+    public int initspecial;
+    public int initcoin;
+
+    public int hart;
+    public int attack;
+    public int special;
+    public int coin;
 
     private int randomBreak;
     private bool isBreak;
@@ -20,7 +26,17 @@ public class PlayerValue : MonoBehaviour
     public GameObject attackGroup;
     void Start()
     {
-        InitPlayerVelue();
+        if (PlayerPrefs.HasKey("InitHart") && PlayerPrefs.HasKey("InitAttack") && PlayerPrefs.HasKey("InitSpecial") && PlayerPrefs.HasKey("InitCoin"))
+        {
+            hart = PlayerPrefs.GetInt("InitHart");
+            attack = PlayerPrefs.GetInt("InitAttack");
+            special = PlayerPrefs.GetInt("InitSpecial");
+            coin = PlayerPrefs.GetInt("InitCoin");
+        }
+        else
+        {
+            InitPlayerVelue();
+        }
     }
 
     // Update is called once per frame
@@ -29,11 +45,12 @@ public class PlayerValue : MonoBehaviour
 
     }
 
-    private void InitPlayerVelue()
+    public void InitPlayerVelue()
     {
-        hart = 100;
-        attack = 20;
-        special = 50;
+        inithart = 100;
+        initattack = 20;
+        initspecial = 50;
+        initcoin = 0;
     }
 
     public void BeAttack(string name, int value)
