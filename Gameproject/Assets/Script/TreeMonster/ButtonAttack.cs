@@ -27,13 +27,12 @@ public class ButtonAttack : MonoBehaviour
     private int monsterNumber;
     private int playerAttackValue;
     private bool canskip = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         InitVelue();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -41,47 +40,47 @@ public class ButtonAttack : MonoBehaviour
 
     public async void singleAttack()
     {
-        if(selectMonster == null)
+        if (selectMonster == null)
         {
             debugText.text = "請選擇攻擊對象";
         }
         else
         {
+            MonsterCheckFalse();
             attackGroup.SetActive(false);
             debugText.text = "";
-            runturn += 1;
-            turn.text = "第" + runturn + "回合";
             if(monsterName == "樹妖1號")
             {
                 playerAttackValue = player.Attack(monsterName);
-                await Delay(1000);
                 treeMonster1.BeAttack(playerAttackValue, monsterName,canskip);
+                await Delay(1000);
             }
             else if (monsterName == "樹妖2號")
             {
                 playerAttackValue = player.Attack(monsterName);
-                await Delay(1000);
                 treeMonster2.BeAttack(playerAttackValue, monsterName, canskip);
+                await Delay(1000);
             }
             else if (monsterName == "樹妖3號")
             {
                 playerAttackValue = player.Attack(monsterName);
-                await Delay(1000);
                 treeMonster3.BeAttack(playerAttackValue, monsterName, canskip);
+                await Delay(1000);
             }
             debugText.text = "";
             StartCoroutine(MonsterAttack());
+            runturn += 1;
+            turn.text = "第" + runturn + "回合";
         }
     }
 
     public async void GroupAttack()
     {
         attackGroup.SetActive(false);
+        MonsterCheckFalse();
         playerAttackValue = player.GroupAttack();
         debugText.text = "發動全體攻擊\n" ;
         await Delay(1000);
-        runturn += 1;
-        turn.text = "第" + runturn + "回合";
         if (treeMonster1 != null)
         {
             monsterName = "樹妖1號";
@@ -104,6 +103,8 @@ public class ButtonAttack : MonoBehaviour
         {
             debugText.text = "";
             StartCoroutine(MonsterAttack());
+            runturn += 1;
+            turn.text = "第" + runturn + "回合";
         }
     }
 
@@ -140,17 +141,27 @@ public class ButtonAttack : MonoBehaviour
 
     IEnumerator MonsterAttack()
     {
-        monsterName = "樹妖1號";
-        treeMonster1.Attack(monsterName);
-        yield return new WaitForSeconds(1);
-        monsterName = "樹妖2號";
-        treeMonster2.Attack(monsterName);
-        yield return new WaitForSeconds(1);
-        monsterName = "樹妖3號";
-        treeMonster3.Attack(monsterName);
-        yield return new WaitForSeconds(1);
+        if(treeMonster1 != null)
+        {
+            monsterName = "樹妖1號";
+            treeMonster1.Attack(monsterName);
+            yield return new WaitForSeconds(1);
+        }
+        if(treeMonster2 != null)
+        {
+            monsterName = "樹妖2號";
+            treeMonster2.Attack(monsterName);
+            yield return new WaitForSeconds(1);
+        }
+        if(treeMonster3 != null)
+        {
+            monsterName = "樹妖3號";
+            treeMonster3.Attack(monsterName);
+            yield return new WaitForSeconds(1);
+        }
         debugText.text = "";
         attackGroup.SetActive(true);
+        MonsterCheckTrue();
     }
 
     public void InitVelue()
@@ -162,5 +173,37 @@ public class ButtonAttack : MonoBehaviour
     private async Task Delay(int milliseconds)
     {
         await Task.Delay(milliseconds);
+    }
+
+    private void MonsterCheckFalse()
+    {
+        if(monster1.gameObject != null)
+        {
+            monster1.gameObject.GetComponent<Button>().enabled = false;
+        }
+        if (monster2.gameObject != null)
+        {
+            monster2.gameObject.GetComponent<Button>().enabled = false;
+        }
+        if (monster3.gameObject != null)
+        {
+            monster3.gameObject.GetComponent<Button>().enabled = false;
+        }
+    }
+
+    private void MonsterCheckTrue()
+    {
+        if (monster1.gameObject != null)
+        {
+            monster1.gameObject.GetComponent<Button>().enabled = true;
+        }
+        if (monster2.gameObject != null)
+        {
+            monster2.gameObject.GetComponent<Button>().enabled = true;
+        }
+        if (monster3.gameObject != null)
+        {
+            monster3.gameObject.GetComponent<Button>().enabled = true;
+        }
     }
 }

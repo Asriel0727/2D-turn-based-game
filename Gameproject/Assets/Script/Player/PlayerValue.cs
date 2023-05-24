@@ -84,39 +84,66 @@ public class PlayerValue : MonoBehaviour
 
     public int Attack(string name)
     {
-        randomBreak = Random.Range(0, 10);
-
-        if (randomBreak > 8)
+        int buttonattack = 0;
+        if (BreakChack())
         {
-            isBreak = true;
+            PlayerAttackAnimation(isBreak);
+            buttonattack = attack * 2;
+            return buttonattack;
         }
         else
         {
-            isBreak = false;
-        }
-        
-        if(isBreak)
-        {
-            attack = 40;
-            debugText.text += "對" + name + "造成了" + attack + "傷害";
-            return attack;
-        }
-        else
-        {
-            attack = 20;
-            debugText.text += "對" + name + "造成了" + attack + "傷害";
-            return attack;
+            PlayerAttackAnimation(isBreak);
+            buttonattack = attack;
+            return buttonattack;
         }
     }
 
     public int GroupAttack()
     {
-        attack = 10;
-        return attack;
+        int buttonattack = 0;
+        if(BreakChack())
+        {
+            buttonattack = attack;
+            PlayerAttackAnimation(isBreak);
+            return buttonattack;
+        }
+        else
+        {
+            buttonattack = attack / 2;
+            PlayerAttackAnimation(isBreak);
+            return buttonattack;
+        }
     }
 
     public void heal(int value)
     {
         hart += value;
+    }
+
+    public void PlayerAttackAnimation(bool isBreak)
+    {
+        if(isBreak)
+        {
+        }
+        else
+        {
+        }
+    }
+
+    public bool BreakChack()
+    {
+        randomBreak = Random.Range(0, 10);
+
+        if (randomBreak > 8)
+        {
+            isBreak = true;
+            return isBreak;
+        }
+        else
+        {
+            isBreak = false;
+            return isBreak;
+        }
     }
 }

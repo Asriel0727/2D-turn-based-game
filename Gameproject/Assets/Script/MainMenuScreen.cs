@@ -46,8 +46,6 @@ public class MainMenuScreen : MonoBehaviour
         PlayerPrefs.SetInt("InitSpecial", special);
         PlayerPrefs.SetInt("InitCoin", coin);
         PlayerPrefs.Save();
-
-        Debug.Log(hart);
     }
 
     private void OnDestroy()

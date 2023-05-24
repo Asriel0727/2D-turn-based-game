@@ -46,12 +46,14 @@ public class PlayerController : MonoBehaviour
             velocity = new Vector2(speed, 0);
             rb1.MovePosition(rb1.position + velocity * Time.fixedDeltaTime * stop);
             animator.SetBool("ReadyToRight", true);
+            animator.SetBool("ReadyToLeft", false);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             velocity = new Vector2(-speed, 0);
             rb1.MovePosition(rb1.position + velocity * Time.fixedDeltaTime * stop);
             animator.SetBool("ReadyToLeft", true);
+            animator.SetBool("ReadyToRight", false);
         }
         else if (Input.GetKey(KeyCode.W))
         {

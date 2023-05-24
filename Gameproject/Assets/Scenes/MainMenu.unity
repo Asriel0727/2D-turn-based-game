@@ -486,11 +486,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87f1eb7324512a45b567a5625ade75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inithart: 100
+  inithart: 0
   initattack: 0
   initspecial: 0
   initcoin: 0
-  hart: 100
+  hart: 0
   attack: 0
   special: 0
   coin: 0
@@ -595,7 +595,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 938607802}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1812365001}
+        m_TargetAssemblyTypeName: ForDebug, Assembly-CSharp
+        m_MethodName: Initall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &938607802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,6 +982,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88471018ce472e34d9a6bb867c675f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hart: 0
+  attack: 0
+  special: 0
+  coin: 0
   monster1: {fileID: 3880594190689885470, guid: 0d84076eadad5ac4f8c4ea86fcaf6c6d, type: 3}
   monster2: {fileID: 8430546914727687372, guid: e2c5dc6a94a5a9c4a8fe3ee05fd55955, type: 3}
   playerValue: {fileID: 810490511}
@@ -1215,6 +1231,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1812365000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1812365002}
+  - component: {fileID: 1812365001}
+  m_Layer: 0
+  m_Name: ForDebug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1812365001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812365000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea543a207a1cb3147be60d5a808b0e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1812365002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812365000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 463.99173, y: 469.37988, z: -11.464894}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2089922473
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class TreeMonster : MonoBehaviour
     private int hart;
     private int attack;
     private int special;
+    private int dropCoin;
     public bool isdead;
 
     private int randomBreak;
@@ -20,6 +21,7 @@ public class TreeMonster : MonoBehaviour
     public Text hartText;
     public Text debugText;
     public loading loading;
+
     void Start()
     {
         InitMonsterVelue();
@@ -37,6 +39,7 @@ public class TreeMonster : MonoBehaviour
         {
             Destroy(this.gameObject);
             isdead = true;
+            playerValue.coin += dropCoin;
             return isdead;
         }
         else
@@ -51,18 +54,20 @@ public class TreeMonster : MonoBehaviour
         hart = 20;
         attack = 5;
         special = 10;
+        dropCoin = 5;
         debugText.text = hart.ToString();
     }
 
     public void BeAttack(int value, string name,bool canskip)
     {
-        if(SkipCheck(canskip))
+        if (SkipCheck(canskip))
         {
-            debugText.text += name +　"閃避了" + "的攻擊" + "\n";
+            debugText.text += name +　"閃避了" + "你的攻擊" + "\n";
+            Debug.Log(name + "閃避了" + "的攻擊");
         }
         else
         {
-            debugText.text += "對" + name + "造成" + value + "傷害" + "\n";
+            debugText.text += "你對" + name + "造成" + value + "傷害" + "\n";
             hart = hart - value;
             loading.now += 10;
             hartText.text = hart.ToString();
@@ -81,6 +86,7 @@ public class TreeMonster : MonoBehaviour
         else
         {
             randomSkip = Random.Range(0, 10);
+            Debug.Log(randomSkip);
             if (randomSkip > 7)
             {
                 isSkip = true;
@@ -96,6 +102,7 @@ public class TreeMonster : MonoBehaviour
 
     public void Attack(string name)
     {
+
         randomBreak = Random.Range(0, 10);
         if(!isdead)
         {
