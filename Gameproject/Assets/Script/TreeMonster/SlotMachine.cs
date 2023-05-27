@@ -36,6 +36,7 @@ public class SlotMachine : MonoBehaviour
 
     void SpinReels()
     {
+        spinButton.gameObject.SetActive(false);
         int reel1Index = Random.Range(0, reel1Symbols.Length);
         int reel2Index = Random.Range(0, reel2Symbols.Length);
         int reel3Index = Random.Range(0, reel3Symbols.Length);
@@ -107,8 +108,21 @@ public class SlotMachine : MonoBehaviour
     {
         if (combination[0] == combination[1] && combination[1] == combination[2])
         {
-            Debug.Log("三個數字相同");
-            mreturn.Threenum();
+            if (combination[0] == 6 && combination[1] == 6 && combination[2] == 6)
+            {
+                Debug.Log("6,6,6");
+                mreturn.Num666();
+            }
+            else if (combination[0] == 7 && combination[1] == 7 && combination[2] == 7)
+            {
+                Debug.Log("7,7,7");
+                mreturn.Num777();
+            }
+            else
+            {
+                Debug.Log("三個數字相同");
+                mreturn.Threenum();
+            }
         }
         else if (combination[0] == combination[1] || combination[1] == combination[2] || combination[0] == combination[2])
         {
@@ -118,6 +132,7 @@ public class SlotMachine : MonoBehaviour
         else
         {
             Debug.Log("沒有相同數字");
+            mreturn.Onenum();
         }
     }
 }

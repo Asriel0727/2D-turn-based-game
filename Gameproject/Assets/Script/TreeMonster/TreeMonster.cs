@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,12 +7,10 @@ public class TreeMonster : MonoBehaviour
 {
     private int hart;
     private int attack;
-    private int special;
     private int dropCoin;
     public bool isdead;
 
     private int randomBreak;
-    private bool isBreak;
 
     private int randomSkip;
     private bool isSkip;
@@ -21,6 +19,12 @@ public class TreeMonster : MonoBehaviour
     public Text hartText;
     public Text debugText;
     public loading loading;
+
+    public RectTransform uiObject;
+    public Vector2 moveOffset;
+    public float moveDuration;
+
+    private Vector2 originalPosition;
 
     void Start()
     {
@@ -53,34 +57,35 @@ public class TreeMonster : MonoBehaviour
     {
         hart = 20;
         attack = 5;
-        special = 10;
         dropCoin = 5;
         debugText.text = hart.ToString();
     }
 
     public void BeAttack(int value, string name,bool canskip)
     {
-        if (SkipCheck(canskip))
+        if (SkipCheck(canskip,name))
         {
-            debugText.text += name +¡@"°{Á×¤F" + "§Aªº§ðÀ»" + "\n";
-            Debug.Log(name + "°{Á×¤F" + "ªº§ðÀ»");
+            debugText.text += name +ã€€"é–ƒé¿äº†" + "ä½ çš„æ”»æ“Š" + "\n";
+            Debug.Log(name + "é–ƒé¿äº†" + "çš„æ”»æ“Š");
         }
         else
         {
-            debugText.text += "§A¹ï" + name + "³y¦¨" + value + "¶Ë®`" + "\n";
+            debugText.text += "ä½ å°" + name + "é€ æˆ" + value + "å‚·å®³" + "\n";
             hart = hart - value;
-            loading.now += 10;
-            hartText.text = hart.ToString();
+            if(MonsterHartCheck() == false)
+            {
+                hartText.text = hart.ToString();
+            }
         }
     }
 
-    private bool SkipCheck(bool canskip)
+    private bool SkipCheck(bool canskip, string name)
     {
         if(canskip)
         {
             loading.now = 0;
             isSkip = false;
-            debugText.text += name + "¨ü¨ì¤F¯S®í§ðÀ»¦ÓµLªk¦æ°Ê";
+            debugText.text = name + "å—åˆ°äº†ç‰¹æ®Šæ”»æ“Šè€Œç„¡æ³•è¡Œå‹•\n";
             return isSkip;
         }
         else
@@ -94,6 +99,7 @@ public class TreeMonster : MonoBehaviour
             }
             else
             {
+                loading.now += 10;
                 isSkip = false;
                 return isSkip;
             }
@@ -108,15 +114,41 @@ public class TreeMonster : MonoBehaviour
         {
             if (randomBreak > 8)
             {
-                isBreak = true;
                 attack = 15;
             }
-            else
-            {
-                isBreak = false;
-            }
-
+            originalPosition = uiObject.anchoredPosition;
+            StartCoroutine(MoveAndReturn());
             playerValue.BeAttack(name, attack);
         }
+    }
+
+    private IEnumerator MoveAndReturn()
+    {
+        Vector2 targetPosition = originalPosition + moveOffset;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < moveDuration)
+        {
+            playerValue.AnimationHart(true);
+            float t = elapsedTime / moveDuration;
+            uiObject.anchoredPosition = Vector2.Lerp(originalPosition, targetPosition, t);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        yield return new WaitForSeconds(1f);
+
+        elapsedTime = 0f;
+
+        while (elapsedTime < moveDuration)
+        {
+            playerValue.AnimationHart(false);
+            float t = elapsedTime / moveDuration;
+            uiObject.anchoredPosition = Vector2.Lerp(targetPosition, originalPosition, t);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        uiObject.anchoredPosition = originalPosition;
     }
 }

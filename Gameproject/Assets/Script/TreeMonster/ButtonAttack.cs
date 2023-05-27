@@ -21,10 +21,10 @@ public class ButtonAttack : MonoBehaviour
 
     public Text debugText;
     public Text turn;
+    public Button spinButton;
 
     private int runturn;
     private string monsterName;
-    private int monsterNumber;
     private int playerAttackValue;
     private bool canskip = false;
 
@@ -51,26 +51,33 @@ public class ButtonAttack : MonoBehaviour
             debugText.text = "";
             if(monsterName == "樹妖1號")
             {
+                player.AnimationAttack();
                 playerAttackValue = player.Attack(monsterName);
                 treeMonster1.BeAttack(playerAttackValue, monsterName,canskip);
-                await Delay(1000);
+                await Delay(1500);
             }
             else if (monsterName == "樹妖2號")
             {
+                player.AnimationAttack();
                 playerAttackValue = player.Attack(monsterName);
                 treeMonster2.BeAttack(playerAttackValue, monsterName, canskip);
-                await Delay(1000);
+                await Delay(1500);
             }
             else if (monsterName == "樹妖3號")
             {
+                player.AnimationAttack();
                 playerAttackValue = player.Attack(monsterName);
                 treeMonster3.BeAttack(playerAttackValue, monsterName, canskip);
-                await Delay(1000);
+                await Delay(1500);
             }
-            debugText.text = "";
-            StartCoroutine(MonsterAttack());
-            runturn += 1;
-            turn.text = "第" + runturn + "回合";
+            if(debugText != null && turn != null)
+            {
+                debugText.text = "";
+                StartCoroutine(MonsterAttack());
+                runturn += 1;
+                turn.text = "第" + runturn + "回合";
+                player.AnimationWait();
+            }
         }
     }
 
@@ -79,28 +86,30 @@ public class ButtonAttack : MonoBehaviour
         attackGroup.SetActive(false);
         MonsterCheckFalse();
         playerAttackValue = player.GroupAttack();
-        debugText.text = "發動全體攻擊\n" ;
-        await Delay(1000);
+        debugText.text = "發動全體攻擊\n";
+        player.AnimationAttack();
+        await Delay(1500);
         if (treeMonster1 != null)
         {
             monsterName = "樹妖1號";
             treeMonster1.BeAttack(playerAttackValue, monsterName, canskip);
-            await Delay(1000);
+            await Delay(1500);
         }
         if (treeMonster2 != null)
         {
             monsterName = "樹妖2號";
             treeMonster2.BeAttack(playerAttackValue, monsterName, canskip);
-            await Delay(1000);
+            await Delay(1500);
         }
         if (treeMonster3 != null)
         {
             monsterName = "樹妖3號";
             treeMonster3.BeAttack(playerAttackValue, monsterName, canskip);
-            await Delay(1000);
+            await Delay(1500);
         }
         if(treeMonster1 != null || treeMonster2 != null || treeMonster3 != null)
         {
+            player.AnimationWait();
             debugText.text = "";
             StartCoroutine(MonsterAttack());
             runturn += 1;
@@ -110,8 +119,11 @@ public class ButtonAttack : MonoBehaviour
 
     public void SpecialAttack()
     {
+        runturn += 1;
+        turn.text = "第" + runturn + "回合";
         main.SetActive(false);
         machine.SetActive(true);
+        spinButton.gameObject.SetActive(true);
     }
 
     public void SelectMonster(GameObject name)
@@ -120,21 +132,18 @@ public class ButtonAttack : MonoBehaviour
         {
             selectMonster = name.gameObject;
             monsterName = "樹妖1號";
-            monsterNumber = 1;
             debugText.text = "已選擇" + monsterName;
         }
         else if(name.name == "Monster(2)")
         {
             selectMonster = name.gameObject;
             monsterName = "樹妖2號";
-            monsterNumber = 1;
             debugText.text = "已選擇" + monsterName;
         }
         else if (name.name == "Monster(3)")
         {
             selectMonster = name.gameObject;
             monsterName = "樹妖3號";
-            monsterNumber = 1;
             debugText.text = "已選擇" + monsterName;
         }
     }

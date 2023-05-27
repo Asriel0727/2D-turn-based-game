@@ -24,6 +24,7 @@ public class PlayerValue : MonoBehaviour
     public Text hartText;
     public Text debugText;
     public GameObject attackGroup;
+    public Animator animator;
     void Start()
     {
         if (PlayerPrefs.HasKey("InitHart") && PlayerPrefs.HasKey("InitAttack") && PlayerPrefs.HasKey("InitSpecial") && PlayerPrefs.HasKey("InitCoin"))
@@ -32,10 +33,12 @@ public class PlayerValue : MonoBehaviour
             attack = PlayerPrefs.GetInt("InitAttack");
             special = PlayerPrefs.GetInt("InitSpecial");
             coin = PlayerPrefs.GetInt("InitCoin");
+            hartText.text = hart.ToString();
         }
         else
         {
             InitPlayerVelue();
+            hartText.text = inithart.ToString();
         }
     }
 
@@ -61,6 +64,7 @@ public class PlayerValue : MonoBehaviour
         }
         else
         {
+            //AnimationHart(true);
             debugText.text += name + "對您造成" + value + "傷害" + "\n";
             hart = hart - value;
             hartText.text = hart.ToString();
@@ -145,5 +149,23 @@ public class PlayerValue : MonoBehaviour
             isBreak = false;
             return isBreak;
         }
+    }
+
+    public void AnimationAttack()
+    {
+        int num = Random.Range(1, 4);
+        animator.SetInteger("AttackNumber", num);
+        animator.SetBool("Wait", false);
+    }
+
+    public void AnimationWait()
+    {
+        animator.SetInteger("AttackNumber", 0);
+        animator.SetBool("Wait", true);
+    }
+
+    public void AnimationHart(bool isBeAttack)
+    {
+        animator.SetBool("Hart", isBeAttack);
     }
 }

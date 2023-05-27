@@ -9,6 +9,7 @@ public class loading : MonoBehaviour
     public int now;
     public Text load_text;
     public GameObject specialButton;
+    public Text debugText;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +45,12 @@ public class loading : MonoBehaviour
     {
         if(now >= 100)
         {
+            debugText.text = "已準備特殊攻擊";
             specialButton.SetActive(true);
+        }
+        else
+        {
+            specialButton.SetActive(false);
         }
     }
 }

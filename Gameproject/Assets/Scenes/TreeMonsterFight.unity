@@ -1332,6 +1332,9 @@ MonoBehaviour:
   hartText: {fileID: 849068451}
   debugText: {fileID: 2067201961}
   loading: {fileID: 1042724524}
+  uiObject: {fileID: 429395861}
+  moveOffset: {x: -50, y: 0}
+  moveDuration: 1
 --- !u!1 &501826524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2376,6 +2379,7 @@ MonoBehaviour:
   hartText: {fileID: 1195784859}
   debugText: {fileID: 2067201961}
   attackGroup: {fileID: 1189130134}
+  animator: {fileID: 1284956377}
 --- !u!1 &849068449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2777,9 +2781,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Max: 100
-  now: 138
+  now: 99
   load_text: {fileID: 5491184}
   specialButton: {fileID: 730615018}
+  debugText: {fileID: 2067201961}
 --- !u!114 &1042724525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2956,7 +2961,7 @@ MonoBehaviour:
   treeMonster1: {fileID: 429395865}
   treeMonster2: {fileID: 1558685407}
   treeMonster3: {fileID: 1459879688}
-  player: {fileID: 0}
+  player: {fileID: 796611213}
   machine: {fileID: 1675238886}
   main: {fileID: 1255428192}
 --- !u!1 &1189130134
@@ -3033,7 +3038,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 93.18737, y: 150.43163}
+  m_AnchoredPosition: {x: -0.0000076294, y: 141}
   m_SizeDelta: {x: 187.09558, y: 54.19986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1195784859
@@ -3514,6 +3519,7 @@ GameObject:
   - component: {fileID: 1284956374}
   - component: {fileID: 1284956376}
   - component: {fileID: 1284956375}
+  - component: {fileID: 1284956377}
   m_Layer: 0
   m_Name: Role
   m_TagString: Untagged
@@ -3540,8 +3546,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -528.62, y: 0.663}
-  m_SizeDelta: {x: 185.23, y: 216.668}
+  m_AnchoredPosition: {x: -462.86987, y: 0.663}
+  m_SizeDelta: {x: 316.7303, y: 216.668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1284956375
 MonoBehaviour:
@@ -3581,6 +3587,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284956373}
   m_CullTransparentMesh: 1
+--- !u!95 &1284956377
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284956373}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7c01bd1cc0b2cb479ac1e6659317c09, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1287479111
 GameObject:
   m_ObjectHideFlags: 0
@@ -3893,6 +3919,9 @@ MonoBehaviour:
   hartText: {fileID: 1836229383}
   debugText: {fileID: 2067201961}
   loading: {fileID: 1042724524}
+  uiObject: {fileID: 1459879684}
+  moveOffset: {x: -50, y: 0}
+  moveDuration: 1
 --- !u!1 &1462351560
 GameObject:
   m_ObjectHideFlags: 0
@@ -4520,6 +4549,9 @@ MonoBehaviour:
   hartText: {fileID: 611668956}
   debugText: {fileID: 2067201961}
   loading: {fileID: 1042724524}
+  uiObject: {fileID: 1558685403}
+  moveOffset: {x: -50, y: 0}
+  moveDuration: 1
 --- !u!1 &1565203787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4674,6 +4706,7 @@ MonoBehaviour:
   attackGroup: {fileID: 1189130134}
   debugText: {fileID: 2067201961}
   turn: {fileID: 767853222}
+  spinButton: {fileID: 1105865010}
 --- !u!4 &1674113214
 Transform:
   m_ObjectHideFlags: 0
