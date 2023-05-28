@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 public class TreeMonsterTag : MonoBehaviour
 {
     public GameObject treeEnemy;
-    public void Start()
+    private void Update()
     {
-        if(treeEnemy != null && !treeEnemy.activeSelf)
+        if (PlayerPrefs.GetInt("IsTreePrefabActive") == 1)
         {
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(true);
         }
         else
         {
-            this.gameObject.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 

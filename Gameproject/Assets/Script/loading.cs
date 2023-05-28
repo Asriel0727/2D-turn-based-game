@@ -13,7 +13,14 @@ public class loading : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        now = 0;
+        if (PlayerPrefs.HasKey("InitNow"))
+        {
+            now = PlayerPrefs.GetInt("InitNow");
+        }
+        else
+        {
+            now = 0;
+        }
     }
 
     // Update is called once per frame
@@ -45,7 +52,7 @@ public class loading : MonoBehaviour
     {
         if(now >= 100)
         {
-            debugText.text = "已準備特殊攻擊";
+            //debugText.text = "已準備特殊攻擊";
             specialButton.SetActive(true);
         }
         else

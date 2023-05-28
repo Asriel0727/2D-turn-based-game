@@ -13,13 +13,14 @@ public class TallButtonAttack : MonoBehaviour
     public GameObject machine;
     public GameObject main;
     public GameObject attackGroup;
+    private GameObject selectMonster;
 
     public Text debugText;
     public Text turn;
+    public Button spinButton;
 
     private int runturn;
     private string monsterName;
-    private int monsterNumber;
     private int playerAttackValue;
     private bool canskip = false;
     // Start is called before the first frame update
@@ -28,7 +29,6 @@ public class TallButtonAttack : MonoBehaviour
         InitVelue();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -36,48 +36,87 @@ public class TallButtonAttack : MonoBehaviour
 
     public async void singleAttack()
     {
-        attackGroup.SetActive(false);
-        debugText.text = "";
-        runturn += 1;
-        turn.text = "第" + runturn + "回合";
-        monsterName = "長腳怪";
-        playerAttackValue = player.Attack(monsterName);
-        await Delay(1500);
-        tallMonster1.BeAttack(playerAttackValue, monsterName, canskip);
-        debugText.text = "";
-        StartCoroutine(MonsterAttack());
+        if (selectMonster == null)
+        {
+            debugText.text = "請選擇攻擊對象";
+        }
+        else
+        {
+            MonsterCheckFalse();
+            attackGroup.SetActive(false);
+            debugText.text = "";
+            if (monsterName == "長腳怪")
+            {
+                player.AnimationAttack();
+                playerAttackValue = player.Attack(monsterName);
+                tallMonster1.BeAttack(playerAttackValue, monsterName, canskip);
+                await Delay(1500);
+            }
+            if (debugText != null && turn != null)
+            {
+                debugText.text = "";
+                StartCoroutine(MonsterAttack());
+                runturn += 1;
+                turn.text = "第" + runturn + "回合";
+                player.AnimationWait();
+            }
+        }
     }
 
     public async void GroupAttack()
     {
         attackGroup.SetActive(false);
+        MonsterCheckFalse();
         playerAttackValue = player.GroupAttack();
         debugText.text = "發動全體攻擊\n";
+        player.AnimationAttack();
         await Delay(1500);
-        runturn += 1;
-        turn.text = "第" + runturn + "回合";
         if (tallMonster1 != null)
         {
             monsterName = "長腳怪";
             tallMonster1.BeAttack(playerAttackValue, monsterName, canskip);
             await Delay(1500);
         }
-        debugText.text = "";
-        StartCoroutine(MonsterAttack());
+        if (tallMonster1 != null)
+        {
+            player.AnimationWait();
+            debugText.text = "";
+            StartCoroutine(MonsterAttack());
+            runturn += 1;
+            turn.text = "第" + runturn + "回合";
+        }
     }
 
     public void SpecialAttack()
     {
+        runturn += 1;
+        turn.text = "第" + runturn + "回合";
         main.SetActive(false);
         machine.SetActive(true);
+        spinButton.gameObject.SetActive(true);
     }
+
+    public void SelectMonster(GameObject name)
+    {
+        if (name.name == "Monster(1)")
+        {
+            selectMonster = name.gameObject;
+            monsterName = "長腳怪";
+            debugText.text = "已選擇" + monsterName;
+        }
+    }
+
     IEnumerator MonsterAttack()
     {
-        monsterName = "長腳怪";
-        tallMonster1.Attack(monsterName);
-        yield return new WaitForSeconds(2);
+        if (tallMonster1 != null)
+        {
+            monsterName = "長腳怪";
+            tallMonster1.Attack(monsterName);
+            yield return new WaitForSeconds(1);
+        }
         debugText.text = "";
         attackGroup.SetActive(true);
+        MonsterCheckTrue();
     }
 
     public void InitVelue()
@@ -89,5 +128,21 @@ public class TallButtonAttack : MonoBehaviour
     private async Task Delay(int milliseconds)
     {
         await Task.Delay(milliseconds);
+    }
+
+    private void MonsterCheckFalse()
+    {
+        if (monster1.gameObject != null)
+        {
+            monster1.gameObject.GetComponent<Button>().enabled = false;
+        }
+    }
+
+    private void MonsterCheckTrue()
+    {
+        if (monster1.gameObject != null)
+        {
+            monster1.gameObject.GetComponent<Button>().enabled = true;
+        }
     }
 }

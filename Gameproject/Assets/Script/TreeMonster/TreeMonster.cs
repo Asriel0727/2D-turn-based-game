@@ -7,7 +7,7 @@ public class TreeMonster : MonoBehaviour
 {
     private int hart;
     private int attack;
-    private int dropCoin;
+    public int dropCoin;
     public bool isdead;
 
     private int randomBreak;
@@ -29,6 +29,7 @@ public class TreeMonster : MonoBehaviour
     void Start()
     {
         InitMonsterVelue();
+        hartText.text = hart.ToString();
     }
 
     // Update is called once per frame
@@ -66,7 +67,6 @@ public class TreeMonster : MonoBehaviour
         if (SkipCheck(canskip,name))
         {
             debugText.text += name +　"閃避了" + "你的攻擊" + "\n";
-            Debug.Log(name + "閃避了" + "的攻擊");
         }
         else
         {
@@ -129,7 +129,6 @@ public class TreeMonster : MonoBehaviour
 
         while (elapsedTime < moveDuration)
         {
-            playerValue.AnimationHart(true);
             float t = elapsedTime / moveDuration;
             uiObject.anchoredPosition = Vector2.Lerp(originalPosition, targetPosition, t);
 

@@ -64,7 +64,7 @@ public class PlayerValue : MonoBehaviour
         }
         else
         {
-            //AnimationHart(true);
+            AnimationHart(true);
             debugText.text += name + "對您造成" + value + "傷害" + "\n";
             hart = hart - value;
             hartText.text = hart.ToString();

@@ -9,6 +9,7 @@ public class MainMenuScreen : MonoBehaviour
     public int attack;
     public int special;
     public int coin;
+    public int now;
 
     public GameObject monster1;
     public GameObject monster2;
@@ -25,8 +26,8 @@ public class MainMenuScreen : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayerZ");
 
         //­«»s©Çª«
-        monster1.gameObject.SetActive(true);
-        monster2.gameObject.SetActive(true);
+        PlayerPrefs.SetInt("IsTreePrefabActive", 1);
+        PlayerPrefs.SetInt("IsTallPrefabActive", 1);
 
     }
     public void StartGame()
@@ -40,11 +41,13 @@ public class MainMenuScreen : MonoBehaviour
         attack = playerValue.initattack;
         special = playerValue.initspecial;
         coin = playerValue.initcoin;
+        now = 0;
 
         PlayerPrefs.SetInt("InitHart", hart);
         PlayerPrefs.SetInt("InitAttack", attack);
         PlayerPrefs.SetInt("InitSpecial", special);
         PlayerPrefs.SetInt("InitCoin", coin);
+        PlayerPrefs.SetInt("InitNow", now);
         PlayerPrefs.Save();
     }
 

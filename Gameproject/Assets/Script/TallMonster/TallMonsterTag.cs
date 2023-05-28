@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 public class TallMonsterTag : MonoBehaviour
 {
     public GameObject tallEnemy;
-    public void Start()
+    private void Update()
     {
-        if (tallEnemy != null && !tallEnemy.activeSelf)
+        if (PlayerPrefs.GetInt("IsTallPrefabActive") == 1)
         {
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(true);
         }
         else
         {
-            this.gameObject.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
     private bool inBattle = false;

@@ -15,6 +15,7 @@ public class ButtonAttack : MonoBehaviour
     public GameObject monster2;
     public GameObject monster3;
     private GameObject selectMonster;
+
     public GameObject machine;
     public GameObject main;
     public GameObject attackGroup;

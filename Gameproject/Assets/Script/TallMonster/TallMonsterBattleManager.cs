@@ -2,19 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TallMonsterBattleManager : MonoBehaviour
 {
     public TallMonster tallMonster1;
     public PlayerValue playerValue;
+    public Canvas winCanvas;
+    public Canvas mainCanvas;
+    public Text text;
+    public Animator boxAnimator;
+    public Button button;
+    public loading nowNum;
 
     public int hart;
     public int attack;
     public int special;
     public int coin;
+    public int now;
     public void BackLevel()
     {
-        // 保存觸發器的位置到PlayerPrefs
         PlayerPrefs.SetFloat("LastTriggerPosX", transform.position.x);
         PlayerPrefs.SetFloat("LastTriggerPosY", transform.position.y);
         PlayerPrefs.Save();
@@ -24,7 +31,9 @@ public class TallMonsterBattleManager : MonoBehaviour
 
     private void Start()
     {
-
+        boxAnimator.SetBool("isOpen", false);
+        text.text = "恭喜你獲得了" + (tallMonster1.dropCoin).ToString() + "枚金幣\n";
+        text.text += "請點擊以下寶箱獲得獎勵\n";
     }
 
     private void Update()
@@ -32,9 +41,21 @@ public class TallMonsterBattleManager : MonoBehaviour
         EndCheck();
     }
 
-    private void EndBattle()
+    public void EndBattle()
     {
-        enemy.SetActive(false);
+        hart = playerValue.hart;
+        attack = playerValue.attack;
+        special = playerValue.special;
+        coin = playerValue.coin;
+        now = nowNum.now;
+
+        PlayerPrefs.SetInt("InitHart", hart);
+        PlayerPrefs.SetInt("InitAttack", attack);
+        PlayerPrefs.SetInt("InitSpecial", special);
+        PlayerPrefs.SetInt("InitCoin", coin);
+        PlayerPrefs.SetInt("InitNow", now);
+        PlayerPrefs.SetInt("IsTallPrefabActive", 0);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(1);
     }
 
@@ -42,17 +63,22 @@ public class TallMonsterBattleManager : MonoBehaviour
     {
         if (tallMonster1.isdead == true)
         {
-            hart = playerValue.hart;
-            attack = playerValue.attack;
-            special = playerValue.special;
-            coin = playerValue.coin;
-
-            PlayerPrefs.SetInt("InitHart", hart);
-            PlayerPrefs.SetInt("InitAttack", attack);
-            PlayerPrefs.SetInt("InitSpecial", special);
-            PlayerPrefs.SetInt("InitCoin", coin);
-            PlayerPrefs.Save();
-            EndBattle();
+            BattleWinUI();
         }
+    }
+
+    private void BattleWinUI()
+    {
+        winCanvas.gameObject.SetActive(true);
+        mainCanvas.gameObject.SetActive(false);
+    }
+
+    public void BoxOpen()
+    {
+        boxAnimator.SetBool("isOpen", true);
+        int moreCoin = Random.Range(1, 30);
+        text.text += "恭喜你獲得" + moreCoin.ToString() + "枚金幣";
+        playerValue.coin += moreCoin;
+        button.gameObject.SetActive(true);
     }
 }
