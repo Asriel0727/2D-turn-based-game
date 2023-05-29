@@ -28,34 +28,20 @@ public class TallMachineReturn : MonoBehaviour
 
     public async void Twonum()
     {
-        RandomNum();
-        if (num1 == 1)
-        {
-            await Delay(1500);
-            End();
-            tallMonster1.BeAttack(70, "¾ð§¯1¸¹", true);
-            await Delay(1500);
-        }
-        if (num2 == 1)
-        {
-            await Delay(1500);
-            End();
-            tallMonster1.BeAttack(70, "ªø¸}©Ç", true);
-            await Delay(1500);
-        }
+        await Delay(1500);
+        End();
+        tallMonster1.BeAttack(70, "ªø¸}©Ç", true);
+        await Delay(1500);
         player.heal(25);
     }
 
     public async void Onenum()
     {
-        RandomNum();
-        if (num1 == 1)
-        {
-            await Delay(1500);
-            End();
-            tallMonster1.BeAttack(50, "ªø¸}©Ç", true);
-            await Delay(1500);
-        }
+        await Delay(1500);
+        End();
+        tallMonster1.BeAttack(50, "ªø¸}©Ç", true);
+        await Delay(1500);
+
     }
 
     public void End()
@@ -77,14 +63,5 @@ public class TallMachineReturn : MonoBehaviour
     public void Num777()
     {
         player.attack += 10;
-    }
-
-    public void RandomNum()
-    {
-        do
-        {
-            num1 = Random.Range(startRange, endRange + 1);
-            num2 = Random.Range(startRange, endRange + 1);
-        } while (num1 == num2);
     }
 }

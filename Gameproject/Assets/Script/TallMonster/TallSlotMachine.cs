@@ -117,18 +117,15 @@ public class TallSlotMachine : MonoBehaviour
             }
             else
             {
-                Debug.Log("三個數字相同");
                 mreturn.Threenum();
             }
         }
         else if (combination[0] == combination[1] || combination[1] == combination[2] || combination[0] == combination[2])
         {
-            Debug.Log("兩個數字相同");
             mreturn.Twonum();
         }
         else
         {
-            Debug.Log("沒有相同數字");
             mreturn.Onenum();
         }
     }

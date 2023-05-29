@@ -362,6 +362,7 @@
 "Assets/Script/MainMenuScreen.cs"
 "Assets/Script/Player/PlayerController.cs"
 "Assets/Script/Player/PlayerValue.cs"
+"Assets/Script/Player/VillagePlayerController.cs"
 "Assets/Script/TallMonster/TallButtonAttack.cs"
 "Assets/Script/TallMonster/TallMachineReturn.cs"
 "Assets/Script/TallMonster/TallMonster.cs"
