@@ -16,6 +16,9 @@ EditorBuildSettings:
     guid: ab055dff9d196644084bc8cbcad2baa9
   - enabled: 1
     path: Assets/Scenes/TallMonsterFight.unity
-    guid: 5c01c373cc85cfd4a95ed5ccab477e7f
+    guid: 28c11dff2681515449848f2c1d4e30ad
+  - enabled: 1
+    path: Assets/Scenes/Village.unity
+    guid: d1379681a8d306340923fb2e8fef1cd1
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0702c675bc6274d4faaba084bfcd6271, type: 2}
