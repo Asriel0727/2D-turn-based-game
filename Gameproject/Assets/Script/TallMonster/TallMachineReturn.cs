@@ -12,11 +12,6 @@ public class TallMachineReturn : MonoBehaviour
     public GameObject machine;
     public GameObject main;
 
-    private int startRange = 1;
-    private int endRange = 1;
-
-    private int num1, num2;
-
     public async void Threenum()
     {
         await Delay(1500);

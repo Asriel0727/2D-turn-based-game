@@ -15,6 +15,11 @@ public class PlayerValue : MonoBehaviour
     public int special;
     public int coin;
 
+    public int smallHealPosion;
+    public int bigHealPosion;
+    public int smallBluePosion;
+    public int bigBluePosion;
+
     private int randomBreak;
     private bool isBreak;
 
@@ -40,6 +45,18 @@ public class PlayerValue : MonoBehaviour
             InitPlayerVelue();
             hartText.text = inithart.ToString();
         }
+
+        if(PlayerPrefs.HasKey("SmallHealPosion") && PlayerPrefs.HasKey("BigHealPosion") && PlayerPrefs.HasKey("SmallBluePosion") && PlayerPrefs.HasKey("BigBluePosion"))
+        {
+            smallHealPosion = PlayerPrefs.GetInt("SmallHealPosion");
+            bigHealPosion = PlayerPrefs.GetInt("BigHealPosion");
+            smallBluePosion = PlayerPrefs.GetInt("SmallBluePosion");
+            bigBluePosion = PlayerPrefs.GetInt("BigBluePosion");
+        }
+        else
+        {
+            InitPlayerBagVelue();
+        }
     }
 
     // Update is called once per frame
@@ -48,12 +65,20 @@ public class PlayerValue : MonoBehaviour
 
     }
 
+    public void InitPlayerBagVelue()
+    {
+        smallHealPosion = 0;
+        bigHealPosion = 0;
+        smallBluePosion = 0;
+        bigBluePosion = 0;
+    }
+
     public void InitPlayerVelue()
     {
         inithart = 100;
         initattack = 20;
         initspecial = 50;
-        initcoin = 0;
+        initcoin = 40;
     }
 
     public void BeAttack(string name, int value)
