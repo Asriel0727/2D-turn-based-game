@@ -494,6 +494,10 @@ MonoBehaviour:
   attack: 0
   special: 0
   coin: 0
+  smallHealPosion: 0
+  bigHealPosion: 0
+  smallBluePosion: 0
+  bigBluePosion: 0
   hartText: {fileID: 1947284624}
   debugText: {fileID: 1947284624}
   attackGroup: {fileID: 1506352699}
@@ -1020,8 +1024,6 @@ MonoBehaviour:
   special: 0
   coin: 0
   now: 0
-  monster1: {fileID: 3880594190689885470, guid: 0d84076eadad5ac4f8c4ea86fcaf6c6d, type: 3}
-  monster2: {fileID: 8430546914727687372, guid: e2c5dc6a94a5a9c4a8fe3ee05fd55955, type: 3}
   playerValue: {fileID: 810490511}
 --- !u!4 &1599820729
 Transform:

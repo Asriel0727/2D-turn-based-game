@@ -10,29 +10,16 @@ public class MainMenuScreen : MonoBehaviour
     public int special;
     public int coin;
     public int now;
-
-    public GameObject monster1;
-    public GameObject monster2;
-    //public GameObject monster1;
-    //public GameObject monster1;
-
     public PlayerValue playerValue;
+
     private void Start()
     {
         playerValue.InitPlayerVelue();
-        // 重製玩家位置
-        PlayerPrefs.DeleteKey("PlayerX");
-        PlayerPrefs.DeleteKey("PlayerY");
-        PlayerPrefs.DeleteKey("PlayerZ");
-
-        //重製怪物
-        PlayerPrefs.SetInt("IsTreePrefabActive", 1);
-        PlayerPrefs.SetInt("IsTallPrefabActive", 1);
-
+        playerValue.InitPlayerBagVelue();
     }
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
 
     private void SavePlayerData()

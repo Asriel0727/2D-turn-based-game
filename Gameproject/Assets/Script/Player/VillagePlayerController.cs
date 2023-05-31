@@ -10,6 +10,8 @@ public class VillagePlayerController : MonoBehaviour
 
     private Animator animator;
 
+    public Canvas playerUi;
+
     private Vector2 velocity;
 
     private float speed = 3;
@@ -24,6 +26,11 @@ public class VillagePlayerController : MonoBehaviour
     void FixedUpdate()
     {
         MovePlayer(player);
+    }
+
+    private void Update()
+    {
+        PlayerUIShow();
     }
 
     public void MovePlayer(GameObject player)
@@ -48,6 +55,15 @@ public class VillagePlayerController : MonoBehaviour
         {
             animator.SetBool("ReadyToRight", false);
             animator.SetBool("ReadyToLeft", false);
+        }
+    }
+
+    void PlayerUIShow()
+    {
+        if(Input.GetKey(KeyCode.B))
+        {
+            playerUi.gameObject.SetActive(true);
+            stop = 0;
         }
     }
 }

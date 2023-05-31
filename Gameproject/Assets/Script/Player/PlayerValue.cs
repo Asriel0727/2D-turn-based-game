@@ -67,8 +67,8 @@ public class PlayerValue : MonoBehaviour
 
     public void InitPlayerBagVelue()
     {
-        smallHealPosion = 0;
-        bigHealPosion = 0;
+        smallHealPosion = 3;
+        bigHealPosion = 1;
         smallBluePosion = 0;
         bigBluePosion = 0;
     }
