@@ -601,9 +601,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1812365001}
-        m_TargetAssemblyTypeName: ForDebug, Assembly-CSharp
-        m_MethodName: Initall
+      - m_Target: {fileID: 1599820728}
+        m_TargetAssemblyTypeName: MainMenuScreen, Assembly-CSharp
+        m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

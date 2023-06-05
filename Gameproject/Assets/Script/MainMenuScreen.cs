@@ -14,12 +14,22 @@ public class MainMenuScreen : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.DeleteKey("PlayerX");
+        PlayerPrefs.DeleteKey("PlayerY");
+        PlayerPrefs.DeleteKey("PlayerZ");
+        PlayerPrefs.SetInt("IsTreePrefabActive",1);
+        PlayerPrefs.SetInt("IsTallPrefabActive",1);
         playerValue.InitPlayerVelue();
         playerValue.InitPlayerBagVelue();
     }
     public void StartGame()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(1);
+    }
+
+    public void EndGame()
+    {
+
     }
 
     private void SavePlayerData()

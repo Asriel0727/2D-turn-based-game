@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ToLevel : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class ToLevel : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.W))
         {
-
+            SceneManager.LoadScene(2);
         }
     }
 }

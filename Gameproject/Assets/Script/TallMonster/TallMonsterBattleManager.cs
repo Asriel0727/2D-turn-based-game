@@ -54,9 +54,8 @@ public class TallMonsterBattleManager : MonoBehaviour
         PlayerPrefs.SetInt("InitSpecial", special);
         PlayerPrefs.SetInt("InitCoin", coin);
         PlayerPrefs.SetInt("InitNow", now);
-        PlayerPrefs.SetInt("IsTallPrefabActive", 0);
         PlayerPrefs.Save();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     private void EndCheck()
@@ -64,6 +63,7 @@ public class TallMonsterBattleManager : MonoBehaviour
         if (tallMonster1.isdead == true)
         {
             BattleWinUI();
+            PlayerPrefs.SetInt("IsTallPrefabActive", 0);
         }
     }
 

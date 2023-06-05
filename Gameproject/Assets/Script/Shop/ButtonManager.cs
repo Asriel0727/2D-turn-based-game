@@ -41,7 +41,7 @@ public class ButtonManager : MonoBehaviour
 
     public void Item1Select()
     {
-        if (player.coin > 10)
+        if (player.coin >= 10)
         {
             player.coin -= 10;
             player.smallHealPosion += 1;
@@ -56,7 +56,7 @@ public class ButtonManager : MonoBehaviour
 
     public void Item2Select()
     {
-        if(player.coin > 20)
+        if(player.coin >= 20)
         {
             player.coin -= 20;
             player.bigHealPosion += 1;
@@ -71,7 +71,7 @@ public class ButtonManager : MonoBehaviour
 
     public void Item3Select()
     {
-        if(player.coin > 40)
+        if(player.coin >= 40)
         {
             player.coin -= 40;
             player.smallBluePosion += 1;
@@ -87,7 +87,7 @@ public class ButtonManager : MonoBehaviour
 
     public void Item4Select()
     {
-        if(player.coin >¡@80)
+        if(player.coin >=¡@80)
         {
             player.coin -= 80;
             player.bigBluePosion += 1;

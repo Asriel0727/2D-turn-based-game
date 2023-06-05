@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
 
+    public Canvas playerUi;
+
+    public Canvas playerBag;
+
     private Vector2 velocity;
 
     private float speed = 3;
@@ -20,10 +24,9 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        // 檢查是否有保存玩家位置
+
         if (PlayerPrefs.HasKey("PlayerX") && PlayerPrefs.HasKey("PlayerY") && PlayerPrefs.HasKey("PlayerZ"))
         {
-            // 移動玩家到保存的位置
             float x = PlayerPrefs.GetFloat("PlayerX");
             float y = PlayerPrefs.GetFloat("PlayerY");
             float z = PlayerPrefs.GetFloat("PlayerZ");
@@ -35,6 +38,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         MovePlayer(player);
+    }
+
+    private void Update()
+    {
+        PlayerUIShow();
     }
 
     public void MovePlayer(GameObject player)
@@ -76,11 +84,24 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
-            // 保存玩家位置
             PlayerPrefs.SetFloat("PlayerX", this.transform.position.x);
             PlayerPrefs.SetFloat("PlayerY", this.transform.position.y);
             PlayerPrefs.SetFloat("PlayerZ", this.transform.position.z);
             PlayerPrefs.Save();
+        }
+    }
+
+    void PlayerUIShow()
+    {
+        if (Input.GetKey(KeyCode.B) && playerUi.gameObject.activeSelf == false)
+        {
+            playerBag.gameObject.SetActive(true);
+            stop = 0;
+        }
+        if(Input.GetKey(KeyCode.C) && playerBag.gameObject.activeSelf == false)
+        {
+            playerUi.gameObject.SetActive(true);
+            stop = 0;
         }
     }
 }

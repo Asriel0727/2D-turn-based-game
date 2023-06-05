@@ -58,9 +58,8 @@ public class BattleManager : MonoBehaviour
         PlayerPrefs.SetInt("InitSpecial", special);
         PlayerPrefs.SetInt("InitCoin", coin);
         PlayerPrefs.SetInt("InitNow", now);
-        PlayerPrefs.SetInt("IsTreePrefabActive", 0);
         PlayerPrefs.Save();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     private void EndCheck()
@@ -68,6 +67,7 @@ public class BattleManager : MonoBehaviour
         if(treeMonster1.isdead == true && treeMonster2.isdead == true && treeMonster3.isdead == true)
         {
             BattleWinUI();
+            PlayerPrefs.SetInt("IsTreePrefabActive", 0);
         }
     }
 

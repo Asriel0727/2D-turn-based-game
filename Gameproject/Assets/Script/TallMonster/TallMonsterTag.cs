@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TallMonsterTag : MonoBehaviour
 {
     public GameObject tallEnemy;
-    private void Update()
+    private void Start()
     {
         if (PlayerPrefs.GetInt("IsTallPrefabActive") == 1)
         {
@@ -24,7 +24,7 @@ public class TallMonsterTag : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && !inBattle)
         {
             inBattle = true;
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(5);
         }
     }
 }

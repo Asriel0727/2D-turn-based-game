@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TreeMonsterTag : MonoBehaviour
 {
     public GameObject treeEnemy;
-    private void Update()
+    private void Start()
     {
         if (PlayerPrefs.GetInt("IsTreePrefabActive") == 1)
         {
@@ -25,7 +25,7 @@ public class TreeMonsterTag : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && !inBattle)
         {
             inBattle = true;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(4);
         }
     }
 }
