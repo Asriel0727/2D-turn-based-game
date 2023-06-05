@@ -10,6 +10,10 @@ public class MainMenuScreen : MonoBehaviour
     public int special;
     public int coin;
     public int now;
+    public int smallHealPosion;
+    public int bigHealPosion;
+    public int smallBluePosion;
+    public int bigBluePosion;
     public PlayerValue playerValue;
 
     private void Start()
@@ -19,6 +23,8 @@ public class MainMenuScreen : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayerZ");
         PlayerPrefs.SetInt("IsTreePrefabActive",1);
         PlayerPrefs.SetInt("IsTallPrefabActive",1);
+        PlayerPrefs.SetInt("IsSnowPrefabActive", 1);
+        PlayerPrefs.SetInt("IsBossPrefabActive", 1);
         playerValue.InitPlayerVelue();
         playerValue.InitPlayerBagVelue();
     }
@@ -38,6 +44,10 @@ public class MainMenuScreen : MonoBehaviour
         attack = playerValue.initattack;
         special = playerValue.initspecial;
         coin = playerValue.initcoin;
+        smallHealPosion = playerValue.smallHealPosion;
+        bigHealPosion = playerValue.bigHealPosion;
+        smallBluePosion = playerValue.smallBluePosion;
+        bigBluePosion = playerValue.bigBluePosion;
         now = 0;
 
         PlayerPrefs.SetInt("InitHart", hart);
@@ -45,6 +55,10 @@ public class MainMenuScreen : MonoBehaviour
         PlayerPrefs.SetInt("InitSpecial", special);
         PlayerPrefs.SetInt("InitCoin", coin);
         PlayerPrefs.SetInt("InitNow", now);
+        PlayerPrefs.SetInt("SmallHealPosion", smallHealPosion);
+        PlayerPrefs.SetInt("BigHealPosion", bigHealPosion);
+        PlayerPrefs.SetInt("SmallBluePosion", smallBluePosion);
+        PlayerPrefs.SetInt("BigBluePosion", bigBluePosion);
         PlayerPrefs.Save();
     }
 

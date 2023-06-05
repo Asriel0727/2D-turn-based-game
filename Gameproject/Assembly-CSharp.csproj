@@ -53,7 +53,7 @@
     <UnityVersion>2021.3.4f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\TallMonster\TallMonsterBattleManager.cs" />
@@ -62,6 +62,7 @@
     <Compile Include="Assets\Script\TallMonster\TallSlotMachine.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\Script\Level\LevelManager.cs" />
     <Compile Include="Assets\Script\MainMenuScreen.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Script\InitValue.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Script\Level\LevelChoose.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Script\TallMonster\TallMonster.cs" />
     <Compile Include="Assets\Script\loading.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Script\Player\VillagePlayerController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Script\Level1ButtonManager.cs" />
     <Compile Include="Assets\Script\TreeMonster\BattleManager.cs" />
     <Compile Include="Assets\Script\TreeMonster\MachineReturn.cs" />
     <Compile Include="Assets\Script\TreeMonster\ButtonAttack.cs" />
@@ -116,9 +119,18 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Script\Shop\ButtonManager.cs" />
-    <Compile Include="Assets\Script\Level\LevelManager.cs" />
-    <Compile Include="Assets\Script\Level\LevelChoose.cs" />
-    <Compile Include="Assets\Script\Level1ButtonManager.cs" />
+    <Compile Include="Assets\Script\SnowMonster\SnowBattleManager.cs" />
+    <Compile Include="Assets\Script\SnowMonster\SnowMonster.cs" />
+    <Compile Include="Assets\Script\Boss\BossMachineReturn.cs" />
+    <Compile Include="Assets\Script\SnowMonster\SnowMonsterTag.cs" />
+    <Compile Include="Assets\Script\Boss\BossTag.cs" />
+    <Compile Include="Assets\Script\SnowMonster\SnowSlotMachine.cs" />
+    <Compile Include="Assets\Script\Boss\BossSlotMachine.cs" />
+    <Compile Include="Assets\Script\Boss\BossMonster.cs" />
+    <Compile Include="Assets\Script\SnowMonster\SnowMachineReturn.cs" />
+    <Compile Include="Assets\Script\Boss\BossButtonAttack.cs" />
+    <Compile Include="Assets\Script\Boss\BossMonsterBattleManager.cs" />
+    <Compile Include="Assets\Script\SnowMonster\SnowButtonAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

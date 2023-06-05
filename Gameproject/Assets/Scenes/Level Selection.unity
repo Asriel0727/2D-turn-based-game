@@ -1741,7 +1741,6 @@ MonoBehaviour:
   - {fileID: 1770389879}
   - {fileID: 1055393078}
   errorText: {fileID: 1954098446}
-  levelGameManager: {fileID: 2059247932}
 --- !u!1 &1897930284
 GameObject:
   m_ObjectHideFlags: 0

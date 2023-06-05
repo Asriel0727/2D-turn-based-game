@@ -23,5 +23,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TallMonsterFight.unity
     guid: 28c11dff2681515449848f2c1d4e30ad
+  - enabled: 1
+    path: Assets/Scenes/SnowMonsterFight.unity
+    guid: 3e34b9505ff6d2a469a239b07e50eb44
+  - enabled: 1
+    path: Assets/Scenes/BossFight.unity
+    guid: 12660fa6f39813b4480e40bba5333a2f
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0702c675bc6274d4faaba084bfcd6271, type: 2}

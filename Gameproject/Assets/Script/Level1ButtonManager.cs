@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,12 +38,17 @@ public class Level1ButtonManager : MonoBehaviour
             if(playerValue.hart + 20 >= 100)
             {
                 playerValue.hart = 100;
+                int hart = 100;
                 playerValue.smallHealPosion -= 1;
+                PlayerPrefs.SetInt("InitHart", hart);
+
             }
             else
             {
                 playerValue.hart += 20;
+                int hart = playerValue.hart + 20;
                 playerValue.smallHealPosion -= 1;
+                PlayerPrefs.SetInt("InitHart", hart);
             }
         }
         else
@@ -69,12 +75,16 @@ public class Level1ButtonManager : MonoBehaviour
             if (playerValue.hart + 40 >= 100)
             {
                 playerValue.hart = 100;
+                int hart = 100;
                 playerValue.bigHealPosion -= 1;
+                PlayerPrefs.SetInt("InitHart", hart);
             }
             else
             {
                 playerValue.hart += 40;
+                int hart = playerValue.hart + 40;
                 playerValue.bigHealPosion -= 1;
+                PlayerPrefs.SetInt("InitHart", hart);
             }
         }
         else
