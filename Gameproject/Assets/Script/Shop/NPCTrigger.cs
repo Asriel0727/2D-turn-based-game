@@ -6,9 +6,11 @@ public class NPCTrigger : MonoBehaviour
 {
     public Canvas uIShop;
 
+    public GameObject shopIcon;
+
     public void OnTriggerStay2D(Collider2D collision)
     {
-
+        shopIcon.gameObject.SetActive(true);
         if (Input.GetKey(KeyCode.W))
         {
             uIShop.gameObject.SetActive(true);
@@ -18,5 +20,6 @@ public class NPCTrigger : MonoBehaviour
     public void OnTriggerExit2D(Collider2D collision)
     {
         uIShop.gameObject.SetActive(false);
+        shopIcon.gameObject.SetActive(false);
     }
 }

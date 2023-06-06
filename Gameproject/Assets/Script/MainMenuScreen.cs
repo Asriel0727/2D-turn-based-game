@@ -25,6 +25,7 @@ public class MainMenuScreen : MonoBehaviour
         PlayerPrefs.SetInt("IsTallPrefabActive",1);
         PlayerPrefs.SetInt("IsSnowPrefabActive", 1);
         PlayerPrefs.SetInt("IsBossPrefabActive", 1);
+        PlayerPrefs.SetInt("Portal", 0);
         playerValue.InitPlayerVelue();
         playerValue.InitPlayerBagVelue();
     }

@@ -91,7 +91,6 @@ public class TreeMonster : MonoBehaviour
         else
         {
             randomSkip = Random.Range(0, 10);
-            Debug.Log(randomSkip);
             if (randomSkip > 7)
             {
                 isSkip = true;

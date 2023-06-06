@@ -60,10 +60,18 @@ public class VillagePlayerController : MonoBehaviour
 
     void PlayerUIShow()
     {
-        if(Input.GetKey(KeyCode.B))
+        if(Input.GetKeyDown(KeyCode.C))
         {
-            playerUi.gameObject.SetActive(true);
-            stop = 0;
+            bool isActive = playerUi.gameObject.activeSelf;
+            playerUi.gameObject.SetActive(!isActive);
+            if(isActive)
+            {
+                stop = 1;
+            }
+            else
+            {
+                stop = 0;
+            }
         }
     }
 }

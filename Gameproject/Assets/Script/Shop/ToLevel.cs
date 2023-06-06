@@ -7,8 +7,12 @@ public class ToLevel : MonoBehaviour
 {
     public PlayerValue value;
 
+    public GameObject tips;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
+        tips.gameObject.SetActive(true);
+
         if(Input.GetKey(KeyCode.W))
         {
             PlayerPrefs.SetInt("InitHart", value.hart);
@@ -23,5 +27,10 @@ public class ToLevel : MonoBehaviour
 
             SceneManager.LoadScene(2);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        tips.gameObject.SetActive(false);
     }
 }

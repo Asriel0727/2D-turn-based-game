@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Level1ButtonManager : MonoBehaviour
 {
@@ -30,7 +31,19 @@ public class Level1ButtonManager : MonoBehaviour
         playerController.stop = 1;
         playerBagUI.gameObject.SetActive(false);
     }
-    
+
+    public void BackToVillage() 
+    {
+        playerController.stop = 0;
+        SceneManager.LoadScene(1);
+    }
+
+    public void BackToMainMenu()
+    {
+        playerController.stop = 0;
+        SceneManager.LoadScene(0);
+    }
+
     public void SmallHealUse()
     {
         if (playerValue.smallHealPosion >= 1 && playerValue.hart < 100)

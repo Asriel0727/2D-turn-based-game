@@ -124,7 +124,6 @@ public class BossMonster : MonoBehaviour
     {
         Vector2 targetPosition = originalPosition + moveOffset;
         float elapsedTime = 0f;
-
         while (elapsedTime < moveDuration)
         {
             float t = elapsedTime / moveDuration;
@@ -142,7 +141,6 @@ public class BossMonster : MonoBehaviour
             playerValue.AnimationHart(false);
             float t = elapsedTime / moveDuration;
             uiObject.anchoredPosition = Vector2.Lerp(targetPosition, originalPosition, t);
-
             elapsedTime += Time.deltaTime;
             yield return null;
         }

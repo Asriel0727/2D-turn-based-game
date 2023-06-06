@@ -93,15 +93,31 @@ public class PlayerController : MonoBehaviour
 
     void PlayerUIShow()
     {
-        if (Input.GetKey(KeyCode.B) && playerUi.gameObject.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.B) && playerUi.gameObject.activeSelf == false)
         {
-            playerBag.gameObject.SetActive(true);
-            stop = 0;
+            bool isActive = playerBag.gameObject.activeSelf;
+            playerBag.gameObject.SetActive(!isActive);
+            if (isActive)
+            {
+                stop = 1;
+            }
+            else
+            {
+                stop = 0;
+            }
         }
-        if(Input.GetKey(KeyCode.C) && playerBag.gameObject.activeSelf == false)
+        if(Input.GetKeyDown(KeyCode.C) && playerBag.gameObject.activeSelf == false)
         {
-            playerUi.gameObject.SetActive(true);
-            stop = 0;
+            bool isActive = playerUi.gameObject.activeSelf;
+            playerUi.gameObject.SetActive(!isActive);
+            if (isActive)
+            {
+                stop = 1;
+            }
+            else
+            {
+                stop = 0;
+            }
         }
     }
 }

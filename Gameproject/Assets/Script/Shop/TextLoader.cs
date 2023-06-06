@@ -4,17 +4,22 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Newtonsoft.Json.Linq;
 
 
 public class TextLoader : MonoBehaviour
 {
     public Text textComponent;
+    public Text Cointext;
+
+    public PlayerValue value;
     public string filePath = "ShopLog.txt";
 
     private Dictionary<string, List<string>> npcDialogues;
 
-    void Start()
+    void Update()
     {
+        Cointext.text = value.coin.ToString();
     }
 
     public void LoadTextFile()

@@ -14,7 +14,7 @@ public class SnowMachineReturn : MonoBehaviour
     public GameObject main;
 
     private int startRange = 1;
-    private int endRange = 3;
+    private int endRange = 2;
 
     private int num1, num2;
 
@@ -62,7 +62,6 @@ public class SnowMachineReturn : MonoBehaviour
             snowMonster2.BeAttack(70, "雪怪2號", true);
             await Delay(1500);
         }
-
         player.heal(25);
     }
 
@@ -72,11 +71,12 @@ public class SnowMachineReturn : MonoBehaviour
         if (num1 == 1)
         {
             await Delay(1500);
+            Debug.Log("1");
             End();
             snowMonster1.BeAttack(50, "雪怪1號", true);
             await Delay(1500);
         }
-        if (num2 == 2)
+        if (num1 == 2)
         {
             await Delay(1500);
             End();

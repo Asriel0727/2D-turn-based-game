@@ -65,6 +65,9 @@ public class BossMonsterBattleManager : MonoBehaviour
         {
             BattleWinUI();
             PlayerPrefs.SetInt("IsBossPrefabActive", 0);
+            PlayerPrefs.SetInt("Portal", 1);
+            int num = PlayerPrefs.GetInt("Portal");
+            Debug.Log("1：" + num);
             PlayerPrefs.Save();
         }
     }

@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelChoose : MonoBehaviour
 {
     public Button[] levelButtons;
+
     public Text errorText;
 
     private void Start()
@@ -41,5 +43,10 @@ public class LevelChoose : MonoBehaviour
     public void ErrorTextClose()
     {
         errorText.gameObject.SetActive(false);
+    }
+
+    public void BackToVillage()
+    {
+        SceneManager.LoadScene(1);
     }
 }

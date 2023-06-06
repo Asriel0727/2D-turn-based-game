@@ -13,15 +13,19 @@ public class ButtonManager : MonoBehaviour
 
     public Image buttonImage1;
     public Text buttonTextError1;
+    public Text buttonTextBuy1;
 
     public Image buttonImage2;
     public Text buttonTextError2;
+    public Text buttonTextBuy2;
 
     public Image buttonImage3;
     public Text buttonTextError3;
+    public Text buttonTextBuy3;
 
     public Image buttonImage4;
     public Text buttonTextError4;
+    public Text buttonTextBuy4;
 
     private void Start()
     {
@@ -45,6 +49,9 @@ public class ButtonManager : MonoBehaviour
         {
             player.coin -= 10;
             player.smallHealPosion += 1;
+            buttonImage1.enabled = false;
+            buttonTextBuy1.gameObject.SetActive(true);
+            Invoke("OpenBuyImage", 1.5f);
         }
         else
         {
@@ -60,6 +67,9 @@ public class ButtonManager : MonoBehaviour
         {
             player.coin -= 20;
             player.bigHealPosion += 1;
+            buttonImage2.enabled = false;
+            buttonTextBuy2.gameObject.SetActive(true);
+            Invoke("OpenBuyImage", 1.5f);
         }
         else
         {
@@ -75,6 +85,9 @@ public class ButtonManager : MonoBehaviour
         {
             player.coin -= 40;
             player.smallBluePosion += 1;
+            buttonImage3.enabled = false;
+            buttonTextBuy3.gameObject.SetActive(true);
+            Invoke("OpenBuyImage", 1.5f);
         }
         else
         {
@@ -91,6 +104,9 @@ public class ButtonManager : MonoBehaviour
         {
             player.coin -= 80;
             player.bigBluePosion += 1;
+            buttonImage4.enabled = false;
+            buttonTextBuy4.gameObject.SetActive(true);
+            Invoke("OpenBuyImage", 1.5f);
         }
         else
         {
@@ -111,5 +127,17 @@ public class ButtonManager : MonoBehaviour
         buttonTextError3.gameObject.SetActive(false);
         buttonImage4.enabled = true;
         buttonTextError4.gameObject.SetActive(false);
+    }
+
+    private void OpenBuyImage()
+    {
+        buttonImage1.enabled = true;
+        buttonTextBuy1.gameObject.SetActive(false);
+        buttonImage2.enabled = true;
+        buttonTextBuy2.gameObject.SetActive(false);
+        buttonImage3.enabled = true;
+        buttonTextBuy3.gameObject.SetActive(false);
+        buttonImage4.enabled = true;
+        buttonTextBuy3.gameObject.SetActive(false);
     }
 }

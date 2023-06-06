@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerValue : MonoBehaviour
 {
@@ -62,7 +63,15 @@ public class PlayerValue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerDeadChack();
+    }
 
+    public void PlayerDeadChack()
+    {
+        if(hart <= 0)
+        {
+            SceneManager.LoadScene(8);
+        }
     }
 
     public void InitPlayerBagVelue()
@@ -191,6 +200,7 @@ public class PlayerValue : MonoBehaviour
 
     public void AnimationHart(bool isBeAttack)
     {
+        Debug.Log("1");
         animator.SetBool("Hart", isBeAttack);
     }
 }
