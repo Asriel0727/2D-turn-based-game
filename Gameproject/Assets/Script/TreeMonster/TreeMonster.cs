@@ -45,6 +45,7 @@ public class TreeMonster : MonoBehaviour
             Destroy(this.gameObject);
             isdead = true;
             playerValue.coin += dropCoin;
+            loading.now += 15;
             return isdead;
         }
         else

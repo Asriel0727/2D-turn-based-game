@@ -36,24 +36,29 @@ public class VillagePlayerController : MonoBehaviour
     public void MovePlayer(GameObject player)
     {
         rb1 = player.GetComponent<Rigidbody2D>();
+        velocity = Vector2.zero;
 
         if (Input.GetKey(KeyCode.D))
         {
             velocity = new Vector2(speed, 0);
-            rb1.MovePosition(rb1.position + velocity * Time.fixedDeltaTime * stop);
             animator.SetBool("ReadyToRight", true);
             animator.SetBool("ReadyToLeft", false);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             velocity = new Vector2(-speed, 0);
-            rb1.MovePosition(rb1.position + velocity * Time.fixedDeltaTime * stop);
             animator.SetBool("ReadyToLeft", true);
             animator.SetBool("ReadyToRight", false);
         }
-        else
+
+        rb1.MovePosition(rb1.position + velocity * Time.fixedDeltaTime * stop);
+
+        if (!Input.GetKey(KeyCode.D))
         {
             animator.SetBool("ReadyToRight", false);
+        }
+        if (!Input.GetKey(KeyCode.A))
+        {
             animator.SetBool("ReadyToLeft", false);
         }
     }

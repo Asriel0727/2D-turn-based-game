@@ -2826,6 +2826,7 @@ MonoBehaviour:
   debugText: {fileID: 2067201961}
   attackGroup: {fileID: 1189130134}
   animator: {fileID: 1284956377}
+  loading: {fileID: 1042724524}
 --- !u!1 &849068449
 GameObject:
   m_ObjectHideFlags: 0

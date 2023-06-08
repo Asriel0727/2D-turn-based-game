@@ -31,6 +31,8 @@ public class PlayerValue : MonoBehaviour
     public Text debugText;
     public GameObject attackGroup;
     public Animator animator;
+    public loading loading;
+
     void Start()
     {
         if (PlayerPrefs.HasKey("InitHart") && PlayerPrefs.HasKey("InitAttack") && PlayerPrefs.HasKey("InitSpecial") && PlayerPrefs.HasKey("InitCoin"))
@@ -111,6 +113,7 @@ public class PlayerValue : MonoBehaviour
         if (randomSkip > 7)
         {
             isSkip = true;
+            loading.now += 5;
             return isSkip;
         }
         else
@@ -127,6 +130,7 @@ public class PlayerValue : MonoBehaviour
         {
             PlayerAttackAnimation(isBreak);
             buttonattack = attack * 2;
+            loading.now += 10;
             return buttonattack;
         }
         else
@@ -200,7 +204,6 @@ public class PlayerValue : MonoBehaviour
 
     public void AnimationHart(bool isBeAttack)
     {
-        Debug.Log("1");
         animator.SetBool("Hart", isBeAttack);
     }
 }

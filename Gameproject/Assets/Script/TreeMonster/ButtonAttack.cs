@@ -24,6 +24,8 @@ public class ButtonAttack : MonoBehaviour
     public Text turn;
     public Button spinButton;
 
+    public Canvas bagcanvas;
+
     private int runturn;
     private string monsterName;
     private int playerAttackValue;
@@ -178,6 +180,11 @@ public class ButtonAttack : MonoBehaviour
     {
         runturn = 1;
         debugText.text = " ";
+    }
+
+    public void Bag()
+    {
+        bagcanvas.gameObject.SetActive(true);
     }
 
     private async Task Delay(int milliseconds)

@@ -36,30 +36,24 @@ public class BossButtonAttack : MonoBehaviour
 
     public async void singleAttack()
     {
-        if (selectMonster == null)
+        monsterName = "BOSS";
+         MonsterCheckFalse();
+         attackGroup.SetActive(false);
+         debugText.text = "";
+        if (monsterName == "BOSS")
         {
-            debugText.text = "請選擇攻擊對象";
+            player.AnimationAttack();
+            playerAttackValue = player.Attack(monsterName);
+            bossMonster1.BeAttack(playerAttackValue, monsterName, canskip);
+            await Delay(1500);
         }
-        else
+        if (debugText != null && turn != null)
         {
-            MonsterCheckFalse();
-            attackGroup.SetActive(false);
             debugText.text = "";
-            if (monsterName == "BOSS")
-            {
-                player.AnimationAttack();
-                playerAttackValue = player.Attack(monsterName);
-                bossMonster1.BeAttack(playerAttackValue, monsterName, canskip);
-                await Delay(1500);
-            }
-            if (debugText != null && turn != null)
-            {
-                debugText.text = "";
-                StartCoroutine(MonsterAttack());
-                runturn += 1;
-                turn.text = "第" + runturn + "回合";
-                player.AnimationWait();
-            }
+            StartCoroutine(MonsterAttack());
+            runturn += 1;
+            turn.text = "第" + runturn + "回合";
+            player.AnimationWait();
         }
     }
 
@@ -94,16 +88,6 @@ public class BossButtonAttack : MonoBehaviour
         main.SetActive(false);
         machine.SetActive(true);
         spinButton.gameObject.SetActive(true);
-    }
-
-    public void SelectMonster(GameObject name)
-    {
-        if (name.name == "Monster(1)")
-        {
-            selectMonster = name.gameObject;
-            monsterName = "BOSS";
-            debugText.text = "已選擇" + monsterName;
-        }
     }
 
     IEnumerator MonsterAttack()

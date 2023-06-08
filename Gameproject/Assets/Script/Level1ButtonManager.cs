@@ -29,6 +29,7 @@ public class Level1ButtonManager : MonoBehaviour
     public void PlayerBagUI()
     {
         playerController.stop = 1;
+        warning.gameObject.SetActive(false);
         playerBagUI.gameObject.SetActive(false);
     }
 
@@ -54,7 +55,9 @@ public class Level1ButtonManager : MonoBehaviour
                 int hart = 100;
                 playerValue.smallHealPosion -= 1;
                 PlayerPrefs.SetInt("InitHart", hart);
-
+                warning.gameObject.SetActive(true);
+                warning.text = "已使用道具，目前血量為" + hart;
+                Invoke("SetFalse", 1.5f);
             }
             else
             {
@@ -62,6 +65,9 @@ public class Level1ButtonManager : MonoBehaviour
                 int hart = playerValue.hart + 20;
                 playerValue.smallHealPosion -= 1;
                 PlayerPrefs.SetInt("InitHart", hart);
+                warning.gameObject.SetActive(true);
+                warning.text = "已使用道具，目前血量為" + hart;
+                Invoke("SetFalse", 1.5f);
             }
         }
         else
@@ -91,6 +97,9 @@ public class Level1ButtonManager : MonoBehaviour
                 int hart = 100;
                 playerValue.bigHealPosion -= 1;
                 PlayerPrefs.SetInt("InitHart", hart);
+                warning.gameObject.SetActive(true);
+                warning.text = "已使用道具，目前血量為" + hart;
+                Invoke("SetFalse", 1.5f);
             }
             else
             {
@@ -98,6 +107,9 @@ public class Level1ButtonManager : MonoBehaviour
                 int hart = playerValue.hart + 40;
                 playerValue.bigHealPosion -= 1;
                 PlayerPrefs.SetInt("InitHart", hart);
+                warning.gameObject.SetActive(true);
+                warning.text = "已使用道具，目前血量為" + hart;
+                Invoke("SetFalse", 1.5f);
             }
         }
         else
@@ -128,6 +140,9 @@ public class Level1ButtonManager : MonoBehaviour
                 playerValue.smallBluePosion -= 1;
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
+                warning.gameObject.SetActive(true);
+                warning.text = "已使用道具，目前氣勢值為" + now;
+                Invoke("SetFalse", 1.5f);
             }
             else
             {
@@ -135,6 +150,9 @@ public class Level1ButtonManager : MonoBehaviour
                 playerValue.smallBluePosion -= 1;
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
+                warning.gameObject.SetActive(true);
+                warning.text = "已使用道具，目前氣勢值為" + now;
+                Invoke("SetFalse", 1.5f);
             }
         }
         else
@@ -165,6 +183,9 @@ public class Level1ButtonManager : MonoBehaviour
                 playerValue.bigBluePosion -= 1;
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
+                warning.gameObject.SetActive(true);
+                warning.text = "已使用道具，目前氣勢值為" + now;
+                Invoke("SetFalse", 1.5f);
             }
             else
             {
@@ -172,6 +193,9 @@ public class Level1ButtonManager : MonoBehaviour
                 playerValue.bigBluePosion -= 1;
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
+                warning.gameObject.SetActive(true);
+                warning.text = "已使用道具，目前氣勢值為" + now;
+                Invoke("SetFalse", 1.5f);
             }
         }
         else
