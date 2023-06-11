@@ -361,6 +361,7 @@
 "Assets/Script/Shop/ButtonHover.cs"
 "Assets/Script/Shop/ButtonManager.cs"
 "Assets/Script/Shop/NPCTrigger.cs"
+"Assets/Script/Shop/SoundController.cs"
 "Assets/Script/Shop/TextLoader.cs"
 "Assets/Script/Shop/ToLevel.cs"
 "Assets/Script/SnowMonster/SnowBattleManager.cs"

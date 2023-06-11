@@ -99,11 +99,13 @@ public class SnowMachineReturn : MonoBehaviour
     public void Num666()
     {
         player.coin += 15;
+        End();
     }
 
     public void Num777()
     {
         player.attack += 10;
+        End();
     }
 
     public void RandomNum()

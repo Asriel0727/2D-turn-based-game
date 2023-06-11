@@ -44,8 +44,11 @@ public class TreeMonster : MonoBehaviour
         {
             Destroy(this.gameObject);
             isdead = true;
+            int now = PlayerPrefs.GetInt("InitNow");
             playerValue.coin += dropCoin;
-            loading.now += 15;
+            now += 15;
+            PlayerPrefs.SetInt("InitNow", now);
+            PlayerPrefs.Save();
             return isdead;
         }
         else
@@ -84,7 +87,11 @@ public class TreeMonster : MonoBehaviour
     {
         if(canskip)
         {
-            loading.now = 0;
+            int now = PlayerPrefs.GetInt("InitNow");
+            playerValue.coin += dropCoin;
+            now = 0;
+            PlayerPrefs.SetInt("InitNow", now);
+            PlayerPrefs.Save();
             isSkip = false;
             debugText.text = name + "受到了特殊攻擊而無法行動\n";
             return isSkip;

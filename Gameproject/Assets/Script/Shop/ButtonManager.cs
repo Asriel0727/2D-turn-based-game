@@ -9,6 +9,7 @@ public class ButtonManager : MonoBehaviour
     public Canvas playerUI;
     public PlayerValue player;
     public VillagePlayerController playerController;
+    public SoundController soundController;
     public TextLoader text;
 
     public Image buttonImage1;
@@ -34,6 +35,7 @@ public class ButtonManager : MonoBehaviour
     }
     public void CloseShop()
     {
+        soundController.PlaySound1();
         shopUI.gameObject.SetActive(false);
     }
 

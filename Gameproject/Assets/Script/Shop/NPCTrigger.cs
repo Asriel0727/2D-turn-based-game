@@ -8,12 +8,15 @@ public class NPCTrigger : MonoBehaviour
 
     public GameObject shopIcon;
 
+    public SoundController soundController;
+
     public void OnTriggerStay2D(Collider2D collision)
     {
         shopIcon.gameObject.SetActive(true);
         if (Input.GetKey(KeyCode.W))
         {
             uIShop.gameObject.SetActive(true);
+            soundController.PlaySound2();
         }
     }
 

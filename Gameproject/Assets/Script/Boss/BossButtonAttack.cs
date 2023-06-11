@@ -18,6 +18,7 @@ public class BossButtonAttack : MonoBehaviour
     public Text debugText;
     public Text turn;
     public Button spinButton;
+    public Canvas bagcanvas;
 
     private int runturn;
     private string monsterName;
@@ -34,9 +35,14 @@ public class BossButtonAttack : MonoBehaviour
 
     }
 
+    public void Bag()
+    {
+        bagcanvas.gameObject.SetActive(true);
+    }
+
     public async void singleAttack()
     {
-        monsterName = "BOSS";
+         monsterName = "BOSS";
          MonsterCheckFalse();
          attackGroup.SetActive(false);
          debugText.text = "";

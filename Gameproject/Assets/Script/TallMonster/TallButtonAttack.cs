@@ -18,6 +18,7 @@ public class TallButtonAttack : MonoBehaviour
     public Text debugText;
     public Text turn;
     public Button spinButton;
+    public Canvas bagcanvas;
 
     private int runturn;
     private string monsterName;
@@ -32,6 +33,11 @@ public class TallButtonAttack : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void Bag()
+    {
+        bagcanvas.gameObject.SetActive(true);
     }
 
     public async void singleAttack()

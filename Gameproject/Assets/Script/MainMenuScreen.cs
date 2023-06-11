@@ -21,6 +21,7 @@ public class MainMenuScreen : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayerX");
         PlayerPrefs.DeleteKey("PlayerY");
         PlayerPrefs.DeleteKey("PlayerZ");
+        PlayerPrefs.SetInt("playerPrefsKey",1);
         PlayerPrefs.SetInt("IsTreePrefabActive",1);
         PlayerPrefs.SetInt("IsTallPrefabActive",1);
         PlayerPrefs.SetInt("IsSnowPrefabActive", 1);

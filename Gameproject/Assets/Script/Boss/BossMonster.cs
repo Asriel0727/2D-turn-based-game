@@ -43,8 +43,11 @@ public class BossMonster : MonoBehaviour
         {
             Destroy(this.gameObject);
             isdead = true;
+            int now = PlayerPrefs.GetInt("InitNow");
             playerValue.coin += dropCoin;
-            loading.now += 15;
+            now += 15;
+            PlayerPrefs.SetInt("InitNow", now);
+            PlayerPrefs.Save();
             return isdead;
         }
         else
@@ -83,7 +86,10 @@ public class BossMonster : MonoBehaviour
     {
         if (canskip)
         {
-            loading.now = 0;
+            int now = PlayerPrefs.GetInt("InitNow");
+            now = 0;
+            PlayerPrefs.SetInt("InitNow", now);
+            PlayerPrefs.Save();
             isSkip = false;
             debugText.text = name + "受到了特殊攻擊而無法行動\n";
             return isSkip;
@@ -98,7 +104,10 @@ public class BossMonster : MonoBehaviour
             }
             else
             {
-                loading.now += 10;
+                int now = PlayerPrefs.GetInt("InitNow");
+                now += 10;
+                PlayerPrefs.SetInt("InitNow", now);
+                PlayerPrefs.Save();
                 isSkip = false;
                 return isSkip;
             }

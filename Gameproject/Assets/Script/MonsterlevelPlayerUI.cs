@@ -22,21 +22,23 @@ public class MonsterlevelPlayerUI : MonoBehaviour
         {
             if (playerValue.hart + 20 >= 100)
             {
-                playerValue.hart = 100;
                 int hart = 100;
                 playerValue.smallHealPosion -= 1;
                 PlayerPrefs.SetInt("InitHart", hart);
+                PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
+                playerValue.hart = 100;
                 warning.text = "已使用道具，目前血量為" + hart;
                 Invoke("SetFalse", 1.5f);
             }
             else
             {
-                playerValue.hart += 20;
                 int hart = playerValue.hart + 20;
                 playerValue.smallHealPosion -= 1;
                 PlayerPrefs.SetInt("InitHart", hart);
+                PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
+                playerValue.hart += 20;
                 warning.text = "已使用道具，目前血量為" + hart;
                 Invoke("SetFalse", 1.5f);
             }
@@ -64,20 +66,22 @@ public class MonsterlevelPlayerUI : MonoBehaviour
         {
             if (playerValue.hart + 40 >= 100)
             {
-                playerValue.hart = 100;
                 int hart = 100;
                 playerValue.bigHealPosion -= 1;
                 PlayerPrefs.SetInt("InitHart", hart);
+                PlayerPrefs.Save();
+                playerValue.hart = 100;
                 warning.gameObject.SetActive(true);
                 warning.text = "已使用道具，目前血量為" + hart;
                 Invoke("SetFalse", 1.5f);
             }
             else
             {
-                playerValue.hart += 40;
                 int hart = playerValue.hart + 40;
                 playerValue.bigHealPosion -= 1;
                 PlayerPrefs.SetInt("InitHart", hart);
+                PlayerPrefs.Save();
+                playerValue.hart += 40;
                 warning.gameObject.SetActive(true);
                 warning.text = "已使用道具，目前血量為" + hart;
                 Invoke("SetFalse", 1.5f);

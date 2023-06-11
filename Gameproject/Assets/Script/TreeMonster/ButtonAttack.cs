@@ -127,6 +127,10 @@ public class ButtonAttack : MonoBehaviour
         main.SetActive(false);
         machine.SetActive(true);
         spinButton.gameObject.SetActive(true);
+        int now = PlayerPrefs.GetInt("InitNow");
+        now = 0;
+        PlayerPrefs.SetInt("InitNow", now);
+        PlayerPrefs.Save();
     }
 
     public void SelectMonster(GameObject name)

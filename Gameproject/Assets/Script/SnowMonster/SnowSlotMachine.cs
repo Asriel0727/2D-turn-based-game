@@ -36,6 +36,11 @@ public class SnowSlotMachine : MonoBehaviour
 
     void SpinReels()
     {
+        int now = PlayerPrefs.GetInt("InitNow");
+        now = 0;
+        PlayerPrefs.SetInt("InitNow", now);
+        PlayerPrefs.Save();
+
         spinButton.gameObject.SetActive(false);
         int reel1Index = Random.Range(0, reel1Symbols.Length);
         int reel2Index = Random.Range(0, reel2Symbols.Length);

@@ -26,6 +26,7 @@ public class loading : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        now = PlayerPrefs.GetInt("InitNow");
         checkValue(now);
         SpecialAttack(now);
     }
@@ -52,7 +53,6 @@ public class loading : MonoBehaviour
     {
         if(now >= 100)
         {
-            //debugText.text = "已準備特殊攻擊";
             specialButton.SetActive(true);
         }
         else

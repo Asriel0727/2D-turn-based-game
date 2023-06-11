@@ -36,6 +36,11 @@ public class BossSlotMachine : MonoBehaviour
 
     void SpinReels()
     {
+        int now = PlayerPrefs.GetInt("InitNow");
+        now = 0;
+        PlayerPrefs.SetInt("InitNow", now);
+        PlayerPrefs.Save();
+
         int reel1Index = Random.Range(0, reel1Symbols.Length);
         int reel2Index = Random.Range(0, reel2Symbols.Length);
         int reel3Index = Random.Range(0, reel3Symbols.Length);

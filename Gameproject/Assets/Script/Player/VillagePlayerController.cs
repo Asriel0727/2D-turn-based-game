@@ -12,6 +12,8 @@ public class VillagePlayerController : MonoBehaviour
 
     public Canvas playerUi;
 
+    public SoundController soundController;
+
     private Vector2 velocity;
 
     private float speed = 3;
@@ -21,6 +23,7 @@ public class VillagePlayerController : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        soundController.PlaySound1();
     }
 
     void FixedUpdate()

@@ -32,6 +32,7 @@ public class PlayerValue : MonoBehaviour
     public GameObject attackGroup;
     public Animator animator;
     public loading loading;
+    public AudioClip attackSound;
 
     void Start()
     {
@@ -41,7 +42,6 @@ public class PlayerValue : MonoBehaviour
             attack = PlayerPrefs.GetInt("InitAttack");
             special = PlayerPrefs.GetInt("InitSpecial");
             coin = PlayerPrefs.GetInt("InitCoin");
-            hartText.text = hart.ToString();
         }
         else
         {
@@ -66,6 +66,7 @@ public class PlayerValue : MonoBehaviour
     void Update()
     {
         PlayerDeadChack();
+        hartText.text = hart.ToString();
     }
 
     public void PlayerDeadChack()
@@ -113,7 +114,10 @@ public class PlayerValue : MonoBehaviour
         if (randomSkip > 7)
         {
             isSkip = true;
-            loading.now += 5;
+            int now = PlayerPrefs.GetInt("InitNow");
+            now += 5;
+            PlayerPrefs.SetInt("InitNow", now);
+            PlayerPrefs.Save();
             return isSkip;
         }
         else
@@ -130,7 +134,6 @@ public class PlayerValue : MonoBehaviour
         {
             PlayerAttackAnimation(isBreak);
             buttonattack = attack * 2;
-            loading.now += 10;
             return buttonattack;
         }
         else
@@ -192,6 +195,8 @@ public class PlayerValue : MonoBehaviour
     public void AnimationAttack()
     {
         int num = Random.Range(1, 4);
+        GetComponent<AudioSource>().clip = attackSound;
+        GetComponent<AudioSource>().Play();
         animator.SetInteger("AttackNumber", num);
         animator.SetBool("Wait", false);
     }
