@@ -3821,6 +3821,7 @@ MonoBehaviour:
   attack: 0
   special: 0
   coin: 0
+  now: 0
   smallHealPosion: 0
   bigHealPosion: 0
   smallBluePosion: 0
@@ -9553,6 +9554,7 @@ MonoBehaviour:
   text: {fileID: 1955340595}
   boxAnimator: {fileID: 1306376755}
   button: {fileID: 392461354}
+  box: {fileID: 1306376752}
   nowNum: {fileID: 1042724524}
   hart: 0
   attack: 0

@@ -12,6 +12,7 @@ public class TallMonsterBattleManager : MonoBehaviour
     public Canvas mainCanvas;
     public Text text;
     public Animator boxAnimator;
+    public Button box;
     public Button button;
     public loading nowNum;
 
@@ -53,7 +54,6 @@ public class TallMonsterBattleManager : MonoBehaviour
         PlayerPrefs.SetInt("InitAttack", attack);
         PlayerPrefs.SetInt("InitSpecial", special);
         PlayerPrefs.SetInt("InitCoin", coin);
-        PlayerPrefs.SetInt("InitNow", now);
         PlayerPrefs.Save();
         SceneManager.LoadScene(3);
     }
@@ -76,6 +76,7 @@ public class TallMonsterBattleManager : MonoBehaviour
     public void BoxOpen()
     {
         boxAnimator.SetBool("isOpen", true);
+        box.interactable = false;
         int moreCoin = Random.Range(1, 30);
         text.text += "恭喜你獲得" + moreCoin.ToString() + "枚金幣";
         playerValue.coin += moreCoin;

@@ -14,6 +14,7 @@ public class BossMonsterBattleManager : MonoBehaviour
     public Text text;
     public Animator boxAnimator;
     public Button button;
+    public Button box;
     public loading nowNum;
 
     public int hart;
@@ -54,7 +55,6 @@ public class BossMonsterBattleManager : MonoBehaviour
         PlayerPrefs.SetInt("InitAttack", attack);
         PlayerPrefs.SetInt("InitSpecial", special);
         PlayerPrefs.SetInt("InitCoin", coin);
-        PlayerPrefs.SetInt("InitNow", now);
         PlayerPrefs.Save();
         SceneManager.LoadScene(3);
     }
@@ -81,6 +81,7 @@ public class BossMonsterBattleManager : MonoBehaviour
     public void BoxOpen()
     {
         boxAnimator.SetBool("isOpen", true);
+        box.interactable = false;
         int moreCoin = Random.Range(1, 30);
         text.text += "恭喜你獲得" + moreCoin.ToString() + "枚金幣";
         playerValue.coin += moreCoin;

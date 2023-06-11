@@ -9871,6 +9871,7 @@ MonoBehaviour:
   text: {fileID: 1955340595}
   boxAnimator: {fileID: 1306376755}
   button: {fileID: 392461354}
+  box: {fileID: 1306376752}
   nowNum: {fileID: 1042724524}
   hart: 0
   attack: 0

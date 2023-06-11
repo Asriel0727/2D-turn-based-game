@@ -147,7 +147,7 @@ public class Level1ButtonManager : MonoBehaviour
                 now = 100;
                 playerValue.smallBluePosion -= 1;
                 int sp = playerValue.smallBluePosion;
-                PlayerPrefs.SetInt("SmallHealPosion", sp);
+                PlayerPrefs.SetInt("SmalBluePosion", sp);
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
@@ -159,7 +159,7 @@ public class Level1ButtonManager : MonoBehaviour
                 now += 35;
                 playerValue.smallBluePosion -= 1;
                 int sp = playerValue.smallBluePosion;
-                PlayerPrefs.SetInt("SmallHealPosion", sp);
+                PlayerPrefs.SetInt("SmalBluePosion", sp);
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);

@@ -15,6 +15,7 @@ public class PlayerValue : MonoBehaviour
     public int attack;
     public int special;
     public int coin;
+    public int now;
 
     public int smallHealPosion;
     public int bigHealPosion;
@@ -36,12 +37,13 @@ public class PlayerValue : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("InitHart") && PlayerPrefs.HasKey("InitAttack") && PlayerPrefs.HasKey("InitSpecial") && PlayerPrefs.HasKey("InitCoin"))
+        if (PlayerPrefs.HasKey("InitHart") && PlayerPrefs.HasKey("InitAttack") && PlayerPrefs.HasKey("InitSpecial") && PlayerPrefs.HasKey("InitCoin") && PlayerPrefs.HasKey("InitNow"))
         {
             hart = PlayerPrefs.GetInt("InitHart");
             attack = PlayerPrefs.GetInt("InitAttack");
             special = PlayerPrefs.GetInt("InitSpecial");
             coin = PlayerPrefs.GetInt("InitCoin");
+            now = PlayerPrefs.GetInt("InitNow");
         }
         else
         {

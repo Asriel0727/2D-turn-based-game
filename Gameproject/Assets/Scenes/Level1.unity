@@ -3277,6 +3277,7 @@ MonoBehaviour:
   attack: 0
   special: 0
   coin: 0
+  now: 0
   smallHealPosion: 0
   bigHealPosion: 0
   smallBluePosion: 0

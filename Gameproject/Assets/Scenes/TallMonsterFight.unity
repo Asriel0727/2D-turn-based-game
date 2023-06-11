@@ -9552,6 +9552,7 @@ MonoBehaviour:
   mainCanvas: {fileID: 1255428195}
   text: {fileID: 1955340595}
   boxAnimator: {fileID: 1306376755}
+  box: {fileID: 1306376752}
   button: {fileID: 392461354}
   nowNum: {fileID: 1042724524}
   hart: 0

@@ -106,7 +106,10 @@ public class TreeMonster : MonoBehaviour
             }
             else
             {
-                loading.now += 10;
+                int now = PlayerPrefs.GetInt("InitNow");
+                now += 10;
+                PlayerPrefs.SetInt("InitNow", now);
+                PlayerPrefs.Save();
                 isSkip = false;
                 return isSkip;
             }

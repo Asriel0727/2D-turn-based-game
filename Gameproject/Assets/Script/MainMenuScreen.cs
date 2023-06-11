@@ -37,7 +37,7 @@ public class MainMenuScreen : MonoBehaviour
 
     public void EndGame()
     {
-
+        Application.Quit();
     }
 
     private void SavePlayerData()

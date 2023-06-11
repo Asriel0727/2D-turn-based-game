@@ -5,12 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ForDebug : MonoBehaviour
 {
-    public void Initall()
+    private void Update()
     {
-        PlayerPrefs.DeleteKey("InitHart");
-        PlayerPrefs.DeleteKey("InitAttack");
-        PlayerPrefs.DeleteKey("InitSpecial");
-        PlayerPrefs.DeleteKey("InitCoin");
+        int now = PlayerPrefs.GetInt("InitNow");
+        Debug.Log(now);
     }
 
 }
