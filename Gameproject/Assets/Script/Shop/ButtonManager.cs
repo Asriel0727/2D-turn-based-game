@@ -28,6 +28,8 @@ public class ButtonManager : MonoBehaviour
     public Text buttonTextError4;
     public Text buttonTextBuy4;
 
+    public AudioClip attackSound;
+
     private void Start()
     {
         text.LoadTextFile();
@@ -51,6 +53,8 @@ public class ButtonManager : MonoBehaviour
         {
             player.coin -= 10;
             player.smallHealPosion += 1;
+            GetComponent<AudioSource>().clip = attackSound;
+            GetComponent<AudioSource>().Play();
             buttonImage1.enabled = false;
             buttonTextBuy1.gameObject.SetActive(true);
             Invoke("OpenBuyImage", 1.5f);
@@ -69,6 +73,8 @@ public class ButtonManager : MonoBehaviour
         {
             player.coin -= 20;
             player.bigHealPosion += 1;
+            GetComponent<AudioSource>().clip = attackSound;
+            GetComponent<AudioSource>().Play();
             buttonImage2.enabled = false;
             buttonTextBuy2.gameObject.SetActive(true);
             Invoke("OpenBuyImage", 1.5f);
@@ -87,6 +93,8 @@ public class ButtonManager : MonoBehaviour
         {
             player.coin -= 40;
             player.smallBluePosion += 1;
+            GetComponent<AudioSource>().clip = attackSound;
+            GetComponent<AudioSource>().Play();
             buttonImage3.enabled = false;
             buttonTextBuy3.gameObject.SetActive(true);
             Invoke("OpenBuyImage", 1.5f);
@@ -106,6 +114,8 @@ public class ButtonManager : MonoBehaviour
         {
             player.coin -= 80;
             player.bigBluePosion += 1;
+            GetComponent<AudioSource>().clip = attackSound;
+            GetComponent<AudioSource>().Play();
             buttonImage4.enabled = false;
             buttonTextBuy4.gameObject.SetActive(true);
             Invoke("OpenBuyImage", 1.5f);
@@ -140,6 +150,6 @@ public class ButtonManager : MonoBehaviour
         buttonImage3.enabled = true;
         buttonTextBuy3.gameObject.SetActive(false);
         buttonImage4.enabled = true;
-        buttonTextBuy3.gameObject.SetActive(false);
+        buttonTextBuy4.gameObject.SetActive(false);
     }
 }

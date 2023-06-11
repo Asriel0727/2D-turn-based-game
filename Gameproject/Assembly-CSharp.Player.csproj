@@ -109,7 +109,7 @@
     <Compile Include="Assets\Script\End\WinTag.cs" />
     <Compile Include="Assets\Script\SnowMonster\SnowMachineReturn.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
-    <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\Test\GameManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Script\Player\PlayerController.cs" />
     <Compile Include="Assets\Script\Shop\TextLoader.cs" />
@@ -124,6 +124,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Script\Player\VillagePlayerController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Script\Shop\SoundController.cs" />
     <Compile Include="Assets\Script\Boss\BossMonster.cs" />
     <Compile Include="Assets\Script\Level1ButtonManager.cs" />
     <Compile Include="Assets\Script\TreeMonster\BattleManager.cs" />
@@ -137,7 +138,7 @@
     <Compile Include="Assets\Script\BagUIItemNum.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Script\Shop\ButtonManager.cs" />
-    <Compile Include="Assets\Script\Shop\SoundController.cs" />
+    <Compile Include="Assets\Script\ClickSound.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

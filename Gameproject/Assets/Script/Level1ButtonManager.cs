@@ -51,19 +51,23 @@ public class Level1ButtonManager : MonoBehaviour
         {
             if(playerValue.hart + 20 >= 100)
             {
-                playerValue.hart = 100;
                 int hart = 100;
                 playerValue.smallHealPosion -= 1;
+                int sp = playerValue.smallHealPosion;
+                PlayerPrefs.SetInt("SmallHealPosion", sp);
                 PlayerPrefs.SetInt("InitHart", hart);
                 warning.gameObject.SetActive(true);
+                playerValue.hart = 100;
                 warning.text = "已使用道具，目前血量為" + hart;
                 Invoke("SetFalse", 1.5f);
             }
             else
             {
                 playerValue.hart += 20;
-                int hart = playerValue.hart + 20;
+                int hart = playerValue.hart;
                 playerValue.smallHealPosion -= 1;
+                int sp = playerValue.smallHealPosion;
+                PlayerPrefs.SetInt("SmallHealPosion", sp);
                 PlayerPrefs.SetInt("InitHart", hart);
                 warning.gameObject.SetActive(true);
                 warning.text = "已使用道具，目前血量為" + hart;
@@ -93,19 +97,23 @@ public class Level1ButtonManager : MonoBehaviour
         {
             if (playerValue.hart + 40 >= 100)
             {
-                playerValue.hart = 100;
                 int hart = 100;
                 playerValue.bigHealPosion -= 1;
+                int sp = playerValue.bigHealPosion;
+                PlayerPrefs.SetInt("BigHealPosion", sp);
                 PlayerPrefs.SetInt("InitHart", hart);
                 warning.gameObject.SetActive(true);
+                playerValue.hart = 100;
                 warning.text = "已使用道具，目前血量為" + hart;
                 Invoke("SetFalse", 1.5f);
             }
             else
             {
                 playerValue.hart += 40;
-                int hart = playerValue.hart + 40;
+                int hart = playerValue.hart;
                 playerValue.bigHealPosion -= 1;
+                int sp = playerValue.bigHealPosion;
+                PlayerPrefs.SetInt("BigHealPosion", sp);
                 PlayerPrefs.SetInt("InitHart", hart);
                 warning.gameObject.SetActive(true);
                 warning.text = "已使用道具，目前血量為" + hart;
@@ -138,6 +146,8 @@ public class Level1ButtonManager : MonoBehaviour
             {
                 now = 100;
                 playerValue.smallBluePosion -= 1;
+                int sp = playerValue.smallBluePosion;
+                PlayerPrefs.SetInt("SmallHealPosion", sp);
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
@@ -148,6 +158,8 @@ public class Level1ButtonManager : MonoBehaviour
             {
                 now += 35;
                 playerValue.smallBluePosion -= 1;
+                int sp = playerValue.smallBluePosion;
+                PlayerPrefs.SetInt("SmallHealPosion", sp);
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
@@ -181,6 +193,8 @@ public class Level1ButtonManager : MonoBehaviour
             {
                 now = 100;
                 playerValue.bigBluePosion -= 1;
+                int sp = playerValue.bigBluePosion;
+                PlayerPrefs.SetInt("BigBluePosion", sp);
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
@@ -191,6 +205,8 @@ public class Level1ButtonManager : MonoBehaviour
             {
                 now += 35;
                 playerValue.bigBluePosion -= 1;
+                int sp = playerValue.bigBluePosion;
+                PlayerPrefs.SetInt("BigBluePosion", sp);
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);

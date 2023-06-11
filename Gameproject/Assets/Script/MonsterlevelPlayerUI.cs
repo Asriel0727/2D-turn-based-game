@@ -24,6 +24,8 @@ public class MonsterlevelPlayerUI : MonoBehaviour
             {
                 int hart = 100;
                 playerValue.smallHealPosion -= 1;
+                int sp = playerValue.smallHealPosion;
+                PlayerPrefs.SetInt("SmallHealPosion", sp);
                 PlayerPrefs.SetInt("InitHart", hart);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
@@ -35,6 +37,8 @@ public class MonsterlevelPlayerUI : MonoBehaviour
             {
                 int hart = playerValue.hart + 20;
                 playerValue.smallHealPosion -= 1;
+                int sp = playerValue.smallHealPosion;
+                PlayerPrefs.SetInt("SmallHealPosion", sp);
                 PlayerPrefs.SetInt("InitHart", hart);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
@@ -68,6 +72,8 @@ public class MonsterlevelPlayerUI : MonoBehaviour
             {
                 int hart = 100;
                 playerValue.bigHealPosion -= 1;
+                int sp = playerValue.bigHealPosion;
+                PlayerPrefs.SetInt("BigHealPosion", sp);
                 PlayerPrefs.SetInt("InitHart", hart);
                 PlayerPrefs.Save();
                 playerValue.hart = 100;
@@ -79,6 +85,8 @@ public class MonsterlevelPlayerUI : MonoBehaviour
             {
                 int hart = playerValue.hart + 40;
                 playerValue.bigHealPosion -= 1;
+                int sp = playerValue.bigHealPosion;
+                PlayerPrefs.SetInt("BigHealPosion", sp);
                 PlayerPrefs.SetInt("InitHart", hart);
                 PlayerPrefs.Save();
                 playerValue.hart += 40;
@@ -113,6 +121,8 @@ public class MonsterlevelPlayerUI : MonoBehaviour
             {
                 now = 100;
                 playerValue.smallBluePosion -= 1;
+                int sp = playerValue.smallBluePosion;
+                PlayerPrefs.SetInt("SmallHealPosion", sp);
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
@@ -123,6 +133,8 @@ public class MonsterlevelPlayerUI : MonoBehaviour
             {
                 now += 35;
                 playerValue.smallBluePosion -= 1;
+                int sp = playerValue.smallBluePosion;
+                PlayerPrefs.SetInt("SmallHealPosion", sp);
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
@@ -156,6 +168,8 @@ public class MonsterlevelPlayerUI : MonoBehaviour
             {
                 now = 100;
                 playerValue.bigBluePosion -= 1;
+                int sp = playerValue.bigBluePosion;
+                PlayerPrefs.SetInt("BigBluePosion", sp);
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
@@ -166,6 +180,8 @@ public class MonsterlevelPlayerUI : MonoBehaviour
             {
                 now += 35;
                 playerValue.bigBluePosion -= 1;
+                int sp = playerValue.bigBluePosion;
+                PlayerPrefs.SetInt("BigBluePosion", sp);
                 PlayerPrefs.SetInt("InitNow", now);
                 PlayerPrefs.Save();
                 warning.gameObject.SetActive(true);
