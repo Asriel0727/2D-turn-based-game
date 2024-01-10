@@ -95,8 +95,7 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "1280px";
-        canvas.style.height = "720px";
+        changeMargin();
       }
 
       loadingBar.style.display = "block";
@@ -116,6 +115,20 @@
         });
       };
       document.body.appendChild(script);
+
+      //
+      let width =0;
+      let height=0;
+      function changeMargin() {
+        width = document.documentElement.clientWidth
+        height = document.documentElement.clientHeight + 8
+        canvas.style.width = width+"px";
+        canvas.style.height = height+"px";
+      }
+
+      window.onresize = function () {
+        changeMargin();
+      }
     </script>
   </body>
 </html>

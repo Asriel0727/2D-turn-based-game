@@ -68,6 +68,7 @@ UnityEngine.Application::get_isBatchMode
 UnityEngine.Application::get_isFocused
 UnityEngine.Application::get_isPlaying
 UnityEngine.Application::get_streamingAssetsPath
+UnityEngine.Application::Quit
 UnityEngine.Application::set_targetFrameRate
 UnityEngine.Application::get_platform
 UnityEngine.AsyncOperation::InternalDestroy
@@ -88,7 +89,10 @@ UnityEngine.AudioClip::get_samples
 UnityEngine.AudioClip::get_length
 UnityEngine.AudioSource::GetPitch
 UnityEngine.AudioSource::get_volume
+UnityEngine.AudioSource::PlayHelper
 UnityEngine.AudioSource::SetPitch
+UnityEngine.AudioSource::Stop
+UnityEngine.AudioSource::set_clip
 UnityEngine.AudioSource::set_volume
 UnityEngine.Avatar::get_humanDescription_Injected
 UnityEngine.AvatarMask::GetHumanoidBodyPartActive

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 146
+  controlID: 98
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 75
+  controlID: 41
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,8 +165,8 @@ MonoBehaviour:
     y: 0
     width: 691.2
     height: 373.6
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -192,8 +192,8 @@ MonoBehaviour:
     y: 373.6
     width: 691.2
     height: 349.19998
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 19
+  controlID: 104
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,8 +245,8 @@ MonoBehaviour:
     y: 0
     width: 473.60004
     height: 370.4
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -297,8 +297,8 @@ MonoBehaviour:
     y: 0
     width: 371.19995
     height: 722.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -833,7 +833,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -846,20 +846,20 @@ MonoBehaviour:
       y: 21
       width: 690.2
       height: 307.19998
-    m_Scale: {x: 0.5333333, y: 0.5333333}
-    m_Translation: {x: 345.1, y: 153.59999}
+    m_Scale: {x: 0.5697916, y: 0.56979156}
+    m_Translation: {x: 345.1, y: 153.59998}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -647.06256
-      y: -288
-      width: 1294.1251
-      height: 576
+      x: -605.66003
+      y: -269.57224
+      width: 1211.3201
+      height: 539.1445
     m_MinimalGUI: 1
-  m_defaultScale: 0.5333333
+  m_defaultScale: 0.5697916
   m_LastWindowPixelSize: {x: 862.75, y: 410.24997}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -896,7 +896,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 109980
+  m_LastSelectedObjectID: -2974
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -930,7 +930,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 669fffffbc9fffff7aa1ffff88a1ffff96a1ffffa4a1ffffbca1ffff12a2ffff20a2ffff32a2ffff3aa2ffff76a7ffffc2a8ffff0cabffff66abffff28adffff3aadffff4cadffff5eadffff7aadffffd4adffffe0adfffff6adffff02aeffff3ab2ffff90b2ffff4eb4ffff5cb4ffff6ab4ffff78b4ffff90b4ffffe6b4ffffeeb4ffff00b5ffff08b5ffffc2b7ffff98b8ffffe2b9ffff36bafffff4bbffff02bcffff10bcffff14bcffff22bcffff8abcffff92bcffffb2bcffffbabcffff3ec1ffffaec2ffff04c3ffffc2c4ffffd0c4ffffdec4ffffecc4ffff04c5ffff6ec5ffff76c5ffff96c5ffff9ac5ffff86c8ffff90c9ffffeccaffff40ccffff96ccffff54ceffff62ceffff70ceffff7eceffff96ceffffeccefffff4ceffff06cfffff0ecfffff4ad1ffff98d1ffff38d7ffff4edaffff9edbfffff4dbffffb2ddffffc0ddffffceddffffdcddfffff4ddffff5edeffff66deffff86deffff8adeffff2af6ffff80f6ffff3ef8ffff4cf8ffff5af8ffff68f8ffff80f8ffffeaf8fffff2f8ffff14f9ffff18f9ffff14fbfffff4ffffffb0ea0000fe1c01001a1e0100441e01007a1e01004e380100243b0100463d0100e0550100b8560100ee5601002a570100ba5701001658010062580100be730100
+      m_ExpandedIDs: 68f6ffffbef6ffff7cf8ffff8af8ffff8ef8ffff9cf8ffffaaf8ffff12f9ffff20f9ffff42f9ffff4af9ffff10fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -995,22 +995,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Script/SnowMonster
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Script/SnowMonster
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GitHub\2D-turn-based-game\Gameproject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: ae5f0000
-    m_LastClickedID: 24494
-    m_ExpandedIDs: 00000000325f0000345f0000b45f000000ca9a3bffffff7f
+    m_SelectedIDs: 58630000
+    m_LastClickedID: 25432
+    m_ExpandedIDs: 00000000a6620000a86200002863000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1038,7 +1038,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000325f0000345f0000
+    m_ExpandedIDs: 00000000a6620000a8620000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1065,7 +1065,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 105e00003e770000686b00000a6100006c69000082690000746300008471000076650000fa5f00003e910000209c0000c25e00009862000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1082,7 +1082,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 7}
+      m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
