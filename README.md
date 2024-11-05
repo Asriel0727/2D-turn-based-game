@@ -2,7 +2,7 @@
 
 <div align="center">
 
-| [繁體中文](README.md) | [English](README_en-us.md) |
+| [繁體中文](README.md) | [English](README_en-us.md) | [PDF Documentation](Doc/遊戲發想提案(GDD).pdf) |
 
 </div>
 
