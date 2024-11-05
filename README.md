@@ -1,4 +1,11 @@
 # 2D小遊戲製作-[火星異變](asriel0727.github.io/2D-turn-based-game/)
+
+<div align="center">
+
+| [繁體中文](README.md) | [English](README_en-us.md) |
+
+</div>
+
 ## 專案介紹
 1. **遊戲內容**
    - 單人第三人稱2D回合制
