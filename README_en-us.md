@@ -35,9 +35,12 @@
   - [Chinaz](https://sc.chinaz.com/yinxiao/)
 
 ## Collaboration Tools
-- GitHub
+- Git
 - Canva
 
+## CI/CD
+- GitHub
+  
 ## Project Status
 - **Current Issues**  
   - [ ] NPC dialogue in the web version’s shop does not display
