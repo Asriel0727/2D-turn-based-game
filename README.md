@@ -31,8 +31,8 @@
   - [小森平的免費下載音效](https://taira-komori.jpn.org/freesoundtw.html)
   - [站長素材](https://sc.chinaz.com/yinxiao/)
 ## 協作工具
-- git
-- Canva
+- **版控**：git
+- **設計文件**：Canva
 ## CI/CD
 - Github Action
 ## 專案狀態
