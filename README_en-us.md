@@ -35,8 +35,8 @@
   - [Chinaz](https://sc.chinaz.com/yinxiao/)
 
 ## Collaboration Tools
-- Git
-- Canva
+- **Version Control**： Git
+- **Document**：Canva
 
 ## CI/CD
 - GitHub Action
