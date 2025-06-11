@@ -39,7 +39,7 @@
 - Canva
 
 ## CI/CD
-- GitHub
+- GitHub Action
   
 ## Project Status
 - **Current Issues**  
