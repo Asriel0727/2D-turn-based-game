@@ -31,8 +31,10 @@
   - [小森平的免費下載音效](https://taira-komori.jpn.org/freesoundtw.html)
   - [站長素材](https://sc.chinaz.com/yinxiao/)
 ## 協作工具
-- github
+- git
 - Canva
+## CI/CD
+- Github Action
 ## 專案狀態
 - **目前問題**  
   - [ ] 網頁版本商店NPC無法顯示對話內容
