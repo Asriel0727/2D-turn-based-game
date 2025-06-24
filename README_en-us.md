@@ -1,4 +1,4 @@
-# 2D Game Development - [Mars Mutation]([asriel0727.github.io/2D-turn-based-game/](https://asriel0727.itch.io/2d-game-development-mars-mutation))
+# 2D Game Development - [Mars Mutation](https://asriel0727.itch.io/2d-game-development-mars-mutation)
 
 <div align="center">
 
